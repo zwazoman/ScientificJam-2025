@@ -1,25 +1,42 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Damageable : MonoBehaviour
 {
-    [field : SerializeField] public float maxHP {  get; private set; }
     public float hp;
-
-    public UnityEvent onDamageTaken,onDeath = new();
 
     [SerializeField] bool destroyOnDeath = true;
 
     public Team team;
 
+    public UnityEvent onDamageTaken, onDeath = new();
+
+    const float invicibilityDuration = .2f;
+    bool CanTakeDamage = true;
+
     public void TakeDamage(float damage)
     {
-        hp-=(float)damage;
-        onDamageTaken.Invoke();
-        if(hp <= 0)
+        if (CanTakeDamage)
         {
-            Die();
+            hp -= (float)damage;
+            onDamageTaken.Invoke();
+            if (hp <= 0)
+            {
+                Die();
+            }
+            else
+            {
+                StartCoroutine(ApplyInvicibility());
+            }
         }
+    }
+
+    IEnumerator ApplyInvicibility()
+    {
+        CanTakeDamage = false;
+        yield return new WaitForSeconds(invicibilityDuration);
+        CanTakeDamage = true;
     }
 
     public void Die()

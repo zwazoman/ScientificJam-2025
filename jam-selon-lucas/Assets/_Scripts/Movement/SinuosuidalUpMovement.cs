@@ -1,6 +1,9 @@
 using UnityEngine;
+using DG.Tweening;
+using System.Threading.Tasks;
+using System.Collections;
 
-public class SinuosidalUpMovement : PhysicalObject
+public class SinuosuidalUpMovement : PhysicalObject
 {
     [SerializeField] float frequency, magnitude, randomMagnitudeOffset;
 
@@ -10,9 +13,11 @@ public class SinuosidalUpMovement : PhysicalObject
     {
         float baseMagnitude = magnitude;
         magnitude = 0;
-        //magnitude.Do(baseMagnitude,1f);
-
-        magnitude += randomMagnitudeOffset * Random.value;
+        DOTween.To(
+            () => magnitude,
+            (val) => magnitude = val,
+            baseMagnitude + randomMagnitudeOffset,
+            .2f);
 
         phaseOffset = Random.value * 2f * Mathf.PI;
     }

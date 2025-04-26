@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PhysicalObject : MonoBehaviour
 {
-    [field : SerializeField]
     public Vector2 Velocity { get; protected set; }
     protected virtual void Update()
     {
