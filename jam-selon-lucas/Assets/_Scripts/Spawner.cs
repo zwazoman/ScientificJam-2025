@@ -16,7 +16,9 @@ public class Spawner : MonoBehaviour
 
     [Header("Position")]
 
-    [SerializeField] float _maxSpawnRange = 0;
+    [SerializeField] bool _randomSpawn;
+    [SerializeField,Tooltip("JAUNe")] float _minSpawnRange = 0;
+    [SerializeField,Tooltip("ROUGE")] float _maxSpawnRange = 0;
 
     private void Start()
     {
@@ -39,23 +41,26 @@ public class Spawner : MonoBehaviour
 
     public GameObject Summon()
     {
+        Vector2 choosenSpawnPos;
+
+        if (_randomSpawn)
+            choosenSpawnPos = Random.insideUnitCircle.normalized * Random.Range(_minSpawnRange,_maxSpawnRange);
+        else
+            choosenSpawnPos = transform.position;
+
         if (_spawnsEnnemies)
         {
             JyrosManager.Instance.AddEntity();
         }
 
-        Vector2 choosenSpawnPos;
-
-        if (_maxSpawnRange > 0)
-            choosenSpawnPos = Random.insideUnitCircle * _maxSpawnRange;
-        else
-            choosenSpawnPos = transform.position;
-
-        return PoolManager.Instance.ChoosePool(_pool).PullObjectFromPool(transform.position);
+        return PoolManager.Instance.ChoosePool(_pool).PullObjectFromPool(choosenSpawnPos);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(transform.position, _maxSpawnRange);   
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, _minSpawnRange);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, _maxSpawnRange);   
     }
 }
