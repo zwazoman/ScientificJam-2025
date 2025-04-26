@@ -49,9 +49,9 @@ public class PlayerMain : MonoBehaviour
 
         if (playerXP.currentLvl % lvlOffset == 0)
         {
-            if (cpt >= spawners.Count) return;
             cpt++;
-            spawners[cpt].gameObject.SetActive(true);
+            if (cpt >= spawners.Count) return;
+            spawners[cpt].enabled = true;
         }
     }
 

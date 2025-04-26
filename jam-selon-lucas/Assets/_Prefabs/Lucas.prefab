@@ -488,7 +488,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: timeBetweenSalves
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: projectilesPerSalve

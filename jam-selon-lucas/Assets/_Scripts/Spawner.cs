@@ -19,8 +19,8 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        //if(_fireRate != 0)
-        StartCoroutine(PeriodicShoot());
+        if(timeBetweenSalves != 0)
+            StartCoroutine(PeriodicShoot());
     }
 
     IEnumerator PeriodicShoot()

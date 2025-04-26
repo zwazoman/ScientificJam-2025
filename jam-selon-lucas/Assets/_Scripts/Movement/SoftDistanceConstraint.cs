@@ -13,7 +13,6 @@ public class SoftDistanceConstraint : PhysicalObject
     public void OnInstantiatedByPool()
     {
         if (target == null) target = PlayerMain.instance.transform;
-        Debug.Log("AHHHHHHHHH");
     }
 
     // Update is called once per frame

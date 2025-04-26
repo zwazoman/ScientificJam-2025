@@ -16,6 +16,7 @@ public enum Pools
     beans,
     Senegal,
     Ant,
+    Punch,
 }
 
 public class PoolManager : MonoBehaviour
