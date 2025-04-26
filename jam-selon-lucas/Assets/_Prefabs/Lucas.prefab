@@ -359,15 +359,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.826226
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6910781
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6753694
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -435,6 +435,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 308177722434929627, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: _maxSpawnRange
+      value: 12.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 308177722434929627, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: _minSpawnRange
+      value: 8.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 308177722434929627, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: projectilesPerSalve
       value: 0.7
       objectReference: {fileID: 0}
@@ -446,6 +454,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2565779319440196142, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: _maxSpawnRange
+      value: 12.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565779319440196142, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: _minSpawnRange
+      value: 8.73
+      objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _pool
       value: 11
@@ -453,6 +469,18 @@ PrefabInstance:
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: fireRate
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: _randomSpawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: _maxSpawnRange
+      value: 12.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: _minSpawnRange
+      value: 8.73
       objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _spawnsEnnemies
@@ -468,15 +496,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5075303648918421313, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.826226
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5075303648918421313, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6910781
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5075303648918421313, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6753694
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5075303648918421313, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -513,6 +541,14 @@ PrefabInstance:
     - target: {fileID: 6451623486711585387, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451623486711585387, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: _maxSpawnRange
+      value: 12.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451623486711585387, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: _minSpawnRange
+      value: 8.73
       objectReference: {fileID: 0}
     - target: {fileID: 6451623486711585387, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: timeBetweenSalves
