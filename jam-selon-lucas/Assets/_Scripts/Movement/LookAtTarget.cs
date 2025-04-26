@@ -7,6 +7,8 @@ public class LookAtTarget : MonoBehaviour
 
     [SerializeField] LookBehaviour lookBehaviour;
 
+    [SerializeField] float RandomOffsetMagnitude;
+
     public void OnPulledFromPool()
     {
         if(lookBehaviour == LookBehaviour.LookAtPlayerAlways || lookBehaviour == LookBehaviour.LookAtPlayerOnStart)
@@ -20,7 +22,7 @@ public class LookAtTarget : MonoBehaviour
         }
 
         
-        Vector3 o = target.position - transform.position;
+        Vector3 o = target.position + (Vector3)Random.insideUnitCircle.normalized * RandomOffsetMagnitude - transform.position;
         o.z = 0f;
         o = o.normalized;
         float a = Mathf.Rad2Deg * Mathf.Atan2(o.y, o.x);
