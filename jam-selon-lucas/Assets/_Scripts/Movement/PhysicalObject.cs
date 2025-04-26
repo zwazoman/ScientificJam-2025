@@ -5,6 +5,10 @@ public class PhysicalObject : MonoBehaviour
     public Vector2 Velocity { get; protected set; }
     Rigidbody2D rb ;
 
+    private void Awake()
+    {
+        OnInstantiatedByPool();
+    }
     private void OnInstantiatedByPool()
     {
         TryGetComponent(out rb);
