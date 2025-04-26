@@ -43,7 +43,8 @@ public class Damageable : MonoBehaviour
             s.Append( spriteRenderer.DOColor(Color.red, .1f));
             s.Append( spriteRenderer.DOColor(Color.white, .1f));
  
-            onDamageTaken.Invoke();
+            onDamageTaken?.Invoke();
+
             if (hp <= 0)
             {
                 Die();
@@ -74,13 +75,14 @@ public class Damageable : MonoBehaviour
 
         if (destroyOnDeath)
         {
-            if (transform.root.TryGetComponent(out PooledObject pooledObject))
+            PooledObject pooledObject;
+            if (transform.root.TryGetComponent(out pooledObject)|| TryGetComponent(out pooledObject))
             {
                 pooledObject.GoBackIntoPool();
             }
             else
             {
-                Debug.LogError("No pooled object attached",this);
+                Debug.LogError("No pooled object attached - "+ gameObject.name,this);
                 Destroy(gameObject);
             }
         }
