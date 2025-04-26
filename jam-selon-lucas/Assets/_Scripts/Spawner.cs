@@ -9,9 +9,13 @@ public class Spawner : MonoBehaviour
     /// cadence de tir en secondes ( si c'est 0 c'ets pas periodique)
     /// </summary>
     [SerializeField] float _fireRate;
-    
 
     private void Start()
+    {
+        OnPulledFromPool();
+    }
+
+    private void OnPulledFromPool()
     {
         StartCoroutine(PeriodicShoot());
     }

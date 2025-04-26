@@ -12,7 +12,7 @@ public class Damageable : MonoBehaviour
 
     public UnityEvent onDamageTaken, onDeath = new();
 
-    const float invicibilityDuration = .2f;
+    public const float invicibilityDuration = .2f;
     bool CanTakeDamage = true;
 
     public void TakeDamage(float damage)
