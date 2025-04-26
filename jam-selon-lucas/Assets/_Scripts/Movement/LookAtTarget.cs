@@ -22,7 +22,7 @@ public class LookAtTarget : MonoBehaviour
         }
 
         
-        Vector3 o = target.position + Random.insideUnitCircle.normalized * RandomOffsetMagnitude - transform.position;
+        Vector3 o = target.position + (Vector3)Random.insideUnitCircle.normalized * RandomOffsetMagnitude - transform.position;
         o.z = 0f;
         o = o.normalized;
         float a = Mathf.Rad2Deg * Mathf.Atan2(o.y, o.x);

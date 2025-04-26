@@ -119,15 +119,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfdc26d2d84fdf244bef816cce1eba81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 100
   destroyOnDeath: 1
   team: 2
+  _xpGains: 0
   onDamageTaken:
     m_PersistentCalls:
       m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  spriteRenderer: {fileID: 0}
   spawnThingOnDeath: 1
   DeathObject: 8
 --- !u!114 &8905307340474189669
@@ -160,7 +162,7 @@ Rigidbody2D:
   m_Mass: 0.83
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
