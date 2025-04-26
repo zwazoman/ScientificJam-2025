@@ -6,18 +6,21 @@ public class SoftDistanceConstraint : PhysicalObject
     [SerializeField] Vector2 distanceRange;
     [SerializeField] float speed;
 
-    void OnInstantiatedByPool()
+    public void OnInstantiatedByPool()
     {
         if (target == null) target = PlayerMain.instance.transform;
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        Debug.Log("tvybitonj");
         Vector3 offset = target.position - transform.position;
         float m = offset.magnitude;
         offset = offset / m * Mathf.Clamp(m, distanceRange.x, distanceRange.y);
         Velocity = Vector3.ClampMagnitude(offset, speed * Time.deltaTime);
+
+        base.Update();
     }
 
     public enum TargetableObject

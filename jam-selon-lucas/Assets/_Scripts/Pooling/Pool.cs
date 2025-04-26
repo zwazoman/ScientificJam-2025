@@ -44,10 +44,10 @@ public class Pool : MonoBehaviour
             instancedObject.name += i.ToString();
 
             PooledObject po = PrefabAlreadyHasPooledObjectComponent ? instancedObject.GetComponent<PooledObject>() : instancedObject.AddComponent<PooledObject>();
-            po.Index = i;
+            _instances.Add(po);
+            po.Index = _instances.IndexOf(po);
             po.Pool = this;
             po.IsInPool = true;
-            _instances[i] = po;
 
             //message optionnel
             instancedObject.BroadcastMessage("OnInstantiatedByPool", SendMessageOptions.DontRequireReceiver);
