@@ -6,6 +6,13 @@ public enum Pools
 {
     TowardsMouse,
     Jyros,
+    Owen,
+    Drone,
+    DroneBullet,
+    Fourmie,
+    Timeline,
+    huitre,
+
 }
 
 public class PoolManager : MonoBehaviour

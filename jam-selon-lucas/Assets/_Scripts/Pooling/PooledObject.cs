@@ -21,10 +21,12 @@ public class PooledObject : MonoBehaviour
     {
         foreach(Behaviour comp in GetComponents<Behaviour>()) if(comp.enabled) _enabledBehavioursAtStart.Add(comp);
     }
-    void OnPulledFromPool()
+
+    public void enablePreviouslyDisabledComponents()
     {
         foreach (Behaviour comp in GetComponents<Behaviour>()) comp.enabled = _enabledBehavioursAtStart.Contains(comp);
     }
+
 
     /// <summary>
     /// à utiliser à la place de Destroy(gameObject)
