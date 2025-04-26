@@ -12,7 +12,8 @@ public enum Pools
     Fourmie,
     Timeline,
     huitre,
-    explosionVFX
+    explosionVFX,
+    beans
 
 }
 

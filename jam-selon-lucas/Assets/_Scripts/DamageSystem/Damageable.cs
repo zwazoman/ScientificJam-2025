@@ -18,7 +18,7 @@ public class Damageable : MonoBehaviour
     public const float invicibilityDuration = .2f;
     bool CanTakeDamage = true;
 
-    SpriteRenderer spriteRenderer;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     [SerializeField] bool spawnThingOnDeath = true;
     [SerializeField] Pools DeathObject = Pools.explosionVFX;
@@ -30,7 +30,7 @@ public class Damageable : MonoBehaviour
 
     void OnInstantiatedByPool()
     {
-        TryGetComponent(out spriteRenderer);
+        if(spriteRenderer==null)TryGetComponent(out spriteRenderer);
     }
 
     public void TakeDamage(float damage)
@@ -81,6 +81,7 @@ public class Damageable : MonoBehaviour
             else
             {
                 Debug.LogError("No pooled object attached");
+                Destroy(gameObject);
             }
         }
     }
