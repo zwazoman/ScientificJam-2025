@@ -1,5 +1,7 @@
+using NUnit.Framework;
 using System;
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.Events;
 
 public class PlayerXP : MonoBehaviour
@@ -7,11 +9,17 @@ public class PlayerXP : MonoBehaviour
     public event Action OnGainXP;
     public event Action OnLvlUp;
 
+    [SerializeField] List<Spawner> _playerSpawners = new();
+
     [SerializeField] public float xpGrowthFactor = 1.1f;
+
+    [SerializeField,Tooltip("tous les combien de niveaux on gagne un nouveau spawner")] int _lvlUpgrade = 5;
 
     [HideInInspector] public float maxXp;
     [HideInInspector] public float currentXP;
     [HideInInspector] public int currentLvl;
+
+    short _spawnerCPT;
 
     public void GainXP(float value)
     {
@@ -29,11 +37,31 @@ public class PlayerXP : MonoBehaviour
 
     public void LvlUp()
     {
-        OnLvlUp?.Invoke();
-
         currentXP = 0;
         maxXp *= xpGrowthFactor;
         currentLvl++;
+
+        OnLvlUp?.Invoke();
+
+        UpdradePlayer();
+    }
+
+    void UpdradePlayer()
+    {
+        foreach(Spawner spawner in _playerSpawners)
+        {
+            if (spawner.gameObject.activeSelf)
+            {
+                //améliorer les stats du spawner
+            }
+        }
+
+        if (currentLvl % _lvlUpgrade == 0)
+        {
+            _spawnerCPT++;
+            if (_spawnerCPT >= _playerSpawners.Count) return;
+            _playerSpawners[_spawnerCPT].gameObject.SetActive(true);
+        }
     }
 
 }
