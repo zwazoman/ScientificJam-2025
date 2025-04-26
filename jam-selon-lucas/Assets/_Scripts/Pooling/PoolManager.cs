@@ -4,7 +4,8 @@ using UnityEngine;
 
 public enum Pools
 {
-    Bullet
+    TowardsMouse,
+    Jyros,
 }
 
 public class PoolManager : MonoBehaviour

@@ -10,12 +10,10 @@ public class Spawner : MonoBehaviour
     /// </summary>
     [SerializeField] float _fireRate;
 
-    private void Start()
-    {
-        OnPulledFromPool();
-    }
+    [SerializeField] bool _spawnsEnnemies;
+    
 
-    private void OnPulledFromPool()
+    private void Start()
     {
         StartCoroutine(PeriodicShoot());
     }
@@ -24,13 +22,18 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            Shoot();
+            Summon();
             yield return new WaitForSeconds(_fireRate);
         }
     }
 
-    public void Shoot()
+    public GameObject Summon()
     {
-        PoolManager.Instance.ChoosePool(_pool).PullObjectFromPool(transform.position);
+        if (_spawnsEnnemies)
+        {
+            JyrosManager.Instance.AddEntity();
+        }
+
+        return PoolManager.Instance.ChoosePool(_pool).PullObjectFromPool(transform.position);
     }
 }
