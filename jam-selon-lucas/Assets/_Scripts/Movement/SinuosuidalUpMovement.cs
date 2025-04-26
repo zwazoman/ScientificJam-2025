@@ -9,7 +9,7 @@ public class SinuosuidalUpMovement : PhysicalObject
 
     float phaseOffset;
 
-    void Awake()
+    void OnInstantiatedByPool()
     {
         float baseMagnitude = magnitude;
         magnitude = 0;

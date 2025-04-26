@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
     /// cadence de tir en secondes ( si c'est 0 c'ets pas periodique)
     /// </summary>
     [SerializeField] float _fireRate;
+
+    [SerializeField] bool _spawnsEnnemies;
     
 
     private void Start()
@@ -20,13 +22,18 @@ public class Spawner : MonoBehaviour
     {
         while (true)
         {
-            Shoot();
+            Summon();
             yield return new WaitForSeconds(_fireRate);
         }
     }
 
-    public void Shoot()
+    public GameObject Summon()
     {
-        PoolManager.Instance.ChoosePool(_pool).PullObjectFromPool(transform.position);
+        if (_spawnsEnnemies)
+        {
+            JyrosManager.Instance.AddEntity();
+        }
+
+        return PoolManager.Instance.ChoosePool(_pool).PullObjectFromPool(transform.position);
     }
 }

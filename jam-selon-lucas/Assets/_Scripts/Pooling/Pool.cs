@@ -53,7 +53,6 @@ public class Pool : MonoBehaviour
             instancedObject.SendMessage("OnInstantiatedByPool", SendMessageOptions.DontRequireReceiver);
 
             PutObjectBackInPool(po);
-
         }
     }
 
