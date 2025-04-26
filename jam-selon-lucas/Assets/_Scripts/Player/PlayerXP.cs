@@ -37,6 +37,7 @@ public class PlayerXP : MonoBehaviour
         maxXp *= xpGrowthFactor;
         currentLvl++;
 
+        print("lvl UP !");
         OnLvlUp?.Invoke();
     }
 
