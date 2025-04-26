@@ -11,7 +11,7 @@ public class PlayerXP : MonoBehaviour
 
     [SerializeField] public float xpGrowthFactor = 1.1f;
 
-    [HideInInspector] public float maxXp;
+    [SerializeField] public float maxXp;
     [HideInInspector] public float currentXP;
     [HideInInspector] public int currentLvl;
     [HideInInspector] public float totalXP;
