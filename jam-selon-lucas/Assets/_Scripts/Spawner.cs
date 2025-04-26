@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] GameObject _prefab;
+    [SerializeField] Pools _pool;
 
     /// <summary>
     /// cadence de tir en secondes ( si c'est 0 c'ets pas periodique)
@@ -27,6 +27,6 @@ public class Spawner : MonoBehaviour
 
     public void Shoot()
     {
-        Instantiate(_prefab);
+        PoolManager.Instance.ChoosePool(_pool).PullObjectFromPool(transform.position);
     }
 }
