@@ -12,6 +12,7 @@ public class Jyros : MonoBehaviour
     private void Start()
     {
         JyrosManager.Instance.OnJyrosUnSummon += Die;
+        SFXManager.Instance.PlaySFXClip(Sounds.Jyros);
     }
 
     void Die()

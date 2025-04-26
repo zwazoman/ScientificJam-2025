@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6805352384030970292}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -45,7 +45,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _poolSize: 0
-  _SFXObject: {fileID: 0}
+  _SFXObject: {fileID: 3662379104358310079, guid: a49ccc0080c0b7f4c995cd988b908270, type: 3}
   _soundsDict:
-    _serializedList: []
+    _serializedList:
+    - Key: Jyros
+      Value:
+        ClipList:
+        - {fileID: 8300000, guid: ae00c39b6ce88dd49a0a6b6498c91378, type: 3}
+        Volume: 1
+        Pitch: 1
+        RandomType: 0
+        MixerGroup: {fileID: 0}
+        tempClipList: []
+        tempClip: {fileID: 0}
   _soundTester: 0
