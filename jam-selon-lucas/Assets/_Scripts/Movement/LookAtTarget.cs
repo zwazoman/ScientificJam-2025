@@ -7,22 +7,25 @@ public class LookAtTarget : MonoBehaviour
 
     [SerializeField] LookBehaviour lookBehaviour;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnPulledFromPool()
+    public void OnPulledFromPool()
     {
         if(lookBehaviour == LookBehaviour.LookAtTargetTransformAlways|| lookBehaviour == LookBehaviour.LookAtPlayerOnStart)
         {
             target = PlayerMain.instance.transform;
         }
 
-        if(lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart)
+        if(lookBehaviour == LookBehaviour.LookAtMouseOnStart || lookBehaviour == LookBehaviour.LookAtMouseAlways)
+        {
+            target = Mouse.Instance.transform;
+        }
+
+        if(lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtMouseOnStart)
         {
             transform.LookAt(target,Vector3.forward);
             enabled = false;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 o = target.position - transform.position;
@@ -36,6 +39,8 @@ public class LookAtTarget : MonoBehaviour
         LookAtTargetTransformAlways,
         LookAtTargetTransformAtStart,
         LookAtPlayerAlways,
-        LookAtPlayerOnStart
+        LookAtPlayerOnStart,
+        LookAtMouseAlways,
+        LookAtMouseOnStart,
     }
 }
