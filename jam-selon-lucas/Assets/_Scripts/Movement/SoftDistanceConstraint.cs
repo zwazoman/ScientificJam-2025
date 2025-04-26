@@ -23,7 +23,7 @@ public class SoftDistanceConstraint : PhysicalObject
         targetToTransform = targetToTransform / m * Mathf.Clamp(m, distanceRange.x, distanceRange.y);
         Vector3 TargetPose = target.position + targetToTransform;
         
-        Velocity = Vector3.ClampMagnitude(TargetPose-transform.position, speed * Time.deltaTime);
+        Velocity = Vector3.ClampMagnitude(TargetPose-transform.position, speed);
 
         base.Update();
     }

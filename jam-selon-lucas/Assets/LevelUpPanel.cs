@@ -9,9 +9,9 @@ public class LevelUpPanel : MonoBehaviour
         PlayerMain.instance.playerXP.OnLvlUp += () =>
         {
             Sequence s = DOTween.Sequence();
-            s.Append(GetComponent<RectTransform>().DOAnchorPosX(220, .5f));
-            s.AppendInterval(.5f);
-            s.Append(GetComponent<RectTransform>().DOAnchorPosX(-270, .5f));
+            s.Append(GetComponent<RectTransform>().DOAnchorPosX(220, .3f));
+            s.AppendInterval(1.2f);
+            s.Append(GetComponent<RectTransform>().DOAnchorPosX(-270, .3f));
             s.PlayForward();
         };
     }
