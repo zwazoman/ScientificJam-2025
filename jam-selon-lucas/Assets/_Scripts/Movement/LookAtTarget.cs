@@ -9,6 +9,11 @@ public class LookAtTarget : MonoBehaviour
 
     [SerializeField] float RandomOffsetMagnitude;
 
+    private void Start()
+    {
+        OnPulledFromPool();
+    }
+
     public void OnPulledFromPool()
     {
         if(lookBehaviour == LookBehaviour.LookAtPlayerAlways || lookBehaviour == LookBehaviour.LookAtPlayerOnStart)

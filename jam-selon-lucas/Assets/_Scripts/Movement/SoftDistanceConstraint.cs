@@ -6,6 +6,10 @@ public class SoftDistanceConstraint : PhysicalObject
     [SerializeField] Vector2 distanceRange;
     [SerializeField] float speed;
 
+    private void Awake()
+    {
+        OnInstantiatedByPool();
+    }
     public void OnInstantiatedByPool()
     {
         if (target == null) target = PlayerMain.instance.transform;
