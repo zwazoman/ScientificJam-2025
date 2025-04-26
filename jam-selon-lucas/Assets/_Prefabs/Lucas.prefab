@@ -353,6 +353,18 @@ PrefabInstance:
       value: Guns
       objectReference: {fileID: 0}
     - target: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.826226
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.6910781
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.6753694
+      objectReference: {fileID: 0}
+    - target: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -403,12 +415,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 308177722434929627, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 308177722434929627, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: projectilesPerSalve
       value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 1248561854421449799, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: m_Name
       value: Enemies
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565779319440196142, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _pool
@@ -469,6 +489,10 @@ PrefabInstance:
     - target: {fileID: 6451623486711585387, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: fireRate
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451623486711585387, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6451623486711585387, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: timeBetweenSalves
