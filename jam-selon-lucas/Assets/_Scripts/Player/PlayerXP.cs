@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerXP : MonoBehaviour
 {
     public event Action OnGainXP;
     public event Action OnLvlUp;
