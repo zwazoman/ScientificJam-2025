@@ -52,7 +52,10 @@ public class PlayerXP : MonoBehaviour
         {
             if (spawner.gameObject.activeSelf)
             {
-                //améliorer les stats du spawner
+                float newProjectilesPerSalves = (float)spawner.projectilesPerSalve * UnityEngine.Random.Range(1.2f, 1.7f);
+                spawner.projectilesPerSalve = (short)newProjectilesPerSalves;
+
+                spawner.timeBetweenSalves *= UnityEngine.Random.Range(1.2f, 1.7f);
             }
         }
 
