@@ -6,6 +6,11 @@ public class SoftDistanceConstraint : PhysicalObject
     [SerializeField] Vector2 distanceRange;
     [SerializeField] float speed;
 
+    void OnInstantiatedByPool()
+    {
+        if (target == null) target = PlayerMain.instance.transform;
+    }
+
     // Update is called once per frame
     void Update()
     {
