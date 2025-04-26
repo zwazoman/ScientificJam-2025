@@ -62,7 +62,7 @@ public class Pool : MonoBehaviour
     /// </summary>
     /// <param name="Parent"></param>
     /// <returns></returns>
-    public GameObject PullObjectFromPool(Transform Parent = null)
+    public GameObject PullObjectFromPool(Transform Parent = null,bool shouldBroadcast = true)
     {
         if (_freeIndices.Count <= 0)
         {
@@ -77,10 +77,11 @@ public class Pool : MonoBehaviour
         PooledObject o = _instances[id];
         o.IsInPool = false;
         o.gameObject.SetActive(true);
+        o.enablePreviouslyDisabledComponents();
         o.transform.parent = Parent;
 
         //message optionnel
-        o.gameObject.BroadcastMessage("OnPulledFromPool", SendMessageOptions.DontRequireReceiver);
+        if(shouldBroadcast) o.gameObject.BroadcastMessage("OnPulledFromPool", SendMessageOptions.DontRequireReceiver);
         return o.gameObject;
     }
 
@@ -88,10 +89,12 @@ public class Pool : MonoBehaviour
     /// permet de faire "spawn" un gameObject inactif depuis la pool à une certaine position. 
     /// à appeler à la place de GAMEOBJECT.INSTANTIATE()
     /// </summary>
-    public GameObject PullObjectFromPool(Vector3 Position, Transform Parent = null)
+    public GameObject PullObjectFromPool(Vector3 Position, Transform Parent = null, bool shouldBroadcast = true)
     {
-        GameObject o = PullObjectFromPool(Parent);
+        GameObject o = PullObjectFromPool(Parent,false);
         o.transform.position = Position;
+
+        if (shouldBroadcast) o.gameObject.BroadcastMessage("OnPulledFromPool", SendMessageOptions.DontRequireReceiver);
         return o;
     }
 
@@ -99,10 +102,12 @@ public class Pool : MonoBehaviour
     /// permet de faire "spawn" un gameObject inactif depuis la pool à une certaine position et rotation. 
     /// à appeler à la place de GAMEOBJECT.INSTANTIATE()
     /// </summary>
-    public GameObject PullObjectFromPool(Vector3 Position, Quaternion rotation, Transform Parent = null)
+    public GameObject PullObjectFromPool(Vector3 Position, Quaternion rotation, Transform Parent = null, bool shouldBroadcast = true)
     {
-        GameObject o = PullObjectFromPool(Position, Parent);
+        GameObject o = PullObjectFromPool(Position, Parent,false);
         o.transform.rotation = rotation;
+
+        if (shouldBroadcast) o.gameObject.BroadcastMessage("OnPulledFromPool", SendMessageOptions.DontRequireReceiver);
         return o;
     }
 
