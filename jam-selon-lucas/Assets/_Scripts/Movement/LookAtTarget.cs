@@ -9,7 +9,7 @@ public class LookAtTarget : MonoBehaviour
 
     public void OnPulledFromPool()
     {
-        if(lookBehaviour == LookBehaviour.LookAtTargetTransformAlways|| lookBehaviour == LookBehaviour.LookAtPlayerOnStart)
+        if(lookBehaviour == LookBehaviour.LookAtPlayerAlways || lookBehaviour == LookBehaviour.LookAtPlayerOnStart)
         {
             target = PlayerMain.instance.transform;
         }

@@ -18,6 +18,9 @@ public class Damageable : MonoBehaviour
 
     SpriteRenderer spriteRenderer;
 
+    [SerializeField] bool spawnThingOnDeath = true;
+    [SerializeField] Pools DeathObject = Pools.explosionVFX;
+
     private void Awake()
     {
         OnInstantiatedByPool();
@@ -57,9 +60,14 @@ public class Damageable : MonoBehaviour
         CanTakeDamage = true;
     }
 
-    public void Die()
+    public async void Die()
     {
+        await Awaitable.WaitForSecondsAsync(invicibilityDuration);
         onDeath?.Invoke();
+        
+        if (spawnThingOnDeath) PoolManager.Instance.ChoosePool(DeathObject).PullObjectFromPool(transform.position);
+
+
         if (destroyOnDeath)
         {
             if (TryGetComponent(out PooledObject pooledObject))

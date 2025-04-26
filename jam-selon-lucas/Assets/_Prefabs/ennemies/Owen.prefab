@@ -128,6 +128,8 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  spawnThingOnDeath: 1
+  DeathObject: 8
 --- !u!114 &8905307340474189669
 MonoBehaviour:
   m_ObjectHideFlags: 0
