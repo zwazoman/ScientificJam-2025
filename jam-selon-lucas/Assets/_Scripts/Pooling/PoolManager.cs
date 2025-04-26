@@ -30,10 +30,11 @@ public class PoolManager : MonoBehaviour
         instance = this;
     }
 
+    [SerializeField] List<Pools> pools = new();
 
+    public void ChoosePool(Pools pool)
+    {
 
-    [Header("VFXs")]
-    public Pool VfxHitPool, VFXDeathPool,VfxHealPool;
-
+    }
 
 }
