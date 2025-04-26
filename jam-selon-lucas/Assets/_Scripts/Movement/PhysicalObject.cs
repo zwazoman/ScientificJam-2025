@@ -3,9 +3,9 @@ using UnityEngine;
 public class PhysicalObject : MonoBehaviour
 {
     public Vector2 Velocity { get; protected set; }
-    Rigidbody2D rb;
+    Rigidbody2D rb ;
 
-    private void Awake()
+    private void OnInstantiatedByPool()
     {
         TryGetComponent(out rb);
     }

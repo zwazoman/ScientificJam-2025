@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1c8c2a35a5f45ac4f8a4bd98b08082a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4c9fed2fe113a34380635d7e982fb46, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496cddeb93400e44996fb50bc1cb1df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 10000
   team: 2
   DieOnContact: 0
 --- !u!114 &5732514044299609306
