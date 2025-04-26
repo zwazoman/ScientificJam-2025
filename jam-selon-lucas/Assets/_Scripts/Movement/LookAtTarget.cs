@@ -19,14 +19,16 @@ public class LookAtTarget : MonoBehaviour
             target = Mouse.Instance.transform;
         }
 
-        if(lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtMouseOnStart)
+        
+        Vector3 o = target.position - transform.position;
+        o.z = 0f;
+        o = o.normalized;
+        float a = Mathf.Rad2Deg * Mathf.Atan2(o.y, o.x);
+        transform.rotation = Quaternion.Euler(0, 0, a);
+
+        //Debug.Log(transform.eulerAngles);
+        if (lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtMouseOnStart)
         {
-            Vector3 o = target.position - transform.position;
-            o.z = 0f;
-            o = o.normalized;
-            float a = Mathf.Rad2Deg * Mathf.Atan2(o.y, o.x);
-            transform.rotation = Quaternion.Euler(0, 0, a);
-            //Debug.Log(transform.eulerAngles);
             this.enabled = false;
         }
     }

@@ -9,6 +9,7 @@ public class DamageDealer : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.collider.name);
         if(collision.gameObject.TryGetComponent(out Damageable damageable))
         {
             if(AreEnnemies(team,damageable.team))
