@@ -14,46 +14,45 @@ using UnityEngine.Assertions;
 public class Pool : MonoBehaviour
 {
     [SerializeField] GameObject _prefab;
-    [SerializeField] uint _poolSize = 50;
+    [SerializeField] uint _initialPoolSize = 50;
 
     /*[SerializeField] */
-    private PooledObject[] _instances; //toutes les instances d'objets, actives comme inactives.
+    private List<PooledObject> _instances; //toutes les instances d'objets, actives comme inactives.
     /*[SerializeField] */
     private List<int> _freeIndices = new List<int>(); //contient tous les indices des instances inactives dans le tableau _instances
 
     private void Awake()
     {
-        PopulatePool();
+        PopulatePool(_initialPoolSize);
     }
 
     /// <summary>
     /// peuple la pool en instanciant des GameObjects ayant tous un component PooledObject
     /// </summary>
-    private void PopulatePool()
+    private void PopulatePool(uint poolSize)
     {
         //création du tableau d'instances
-        _instances = new PooledObject[_poolSize];
+        _instances = new List<PooledObject>();
 
         //regarde si il y'aura besoin d'ajouter le component PooledObject aux instances de la prefab,ou si il y est déjà.
         bool PrefabAlreadyHasPooledObjectComponent = _prefab.GetComponent<PooledObject>();
 
         //crée toutes les instances de la prefab et les met dans la pool.
-        for (int i = 0; i < _poolSize; i++)
+        for (int i = 0; i < poolSize; i++)
         {
             GameObject instancedObject = GameObject.Instantiate(_prefab);
             instancedObject.name += i.ToString();
 
             PooledObject po = PrefabAlreadyHasPooledObjectComponent ? instancedObject.GetComponent<PooledObject>() : instancedObject.AddComponent<PooledObject>();
-            po.Index = i;
+            _instances.Add(po);
+            po.Index = _instances.IndexOf(po);
             po.Pool = this;
             po.IsInPool = true;
-            _instances[i] = po;
 
             //message optionnel
-            instancedObject.SendMessage("OnInstantiatedByPool", SendMessageOptions.DontRequireReceiver);
+            instancedObject.BroadcastMessage("OnInstantiatedByPool", SendMessageOptions.DontRequireReceiver);
 
             PutObjectBackInPool(po);
-
         }
     }
 
@@ -63,9 +62,12 @@ public class Pool : MonoBehaviour
     /// </summary>
     /// <param name="Parent"></param>
     /// <returns></returns>
-    public GameObject PullObjectFromPool(Transform Parent = null)
+    public GameObject PullObjectFromPool(Transform Parent = null,bool shouldBroadcast = true)
     {
-        Assert.IsTrue(_freeIndices.Count > 0, "Pool is empty!");
+        if (_freeIndices.Count <= 0)
+        {
+            PopulatePool(5);
+        }
 
         //pioche le premier indice libre dans la pool.
         int id = _freeIndices[0];
@@ -75,10 +77,11 @@ public class Pool : MonoBehaviour
         PooledObject o = _instances[id];
         o.IsInPool = false;
         o.gameObject.SetActive(true);
+        o.enablePreviouslyDisabledComponents();
         o.transform.parent = Parent;
 
         //message optionnel
-        o.gameObject.SendMessage("OnPulledFromPool", SendMessageOptions.DontRequireReceiver);
+        if(shouldBroadcast) o.gameObject.BroadcastMessage("OnPulledFromPool", SendMessageOptions.DontRequireReceiver);
         return o.gameObject;
     }
 
@@ -86,10 +89,12 @@ public class Pool : MonoBehaviour
     /// permet de faire "spawn" un gameObject inactif depuis la pool à une certaine position. 
     /// à appeler à la place de GAMEOBJECT.INSTANTIATE()
     /// </summary>
-    public GameObject PullObjectFromPool(Vector3 Position, Transform Parent = null)
+    public GameObject PullObjectFromPool(Vector3 Position, Transform Parent = null, bool shouldBroadcast = true)
     {
-        GameObject o = PullObjectFromPool(Parent);
+        GameObject o = PullObjectFromPool(Parent,false);
         o.transform.position = Position;
+
+        if (shouldBroadcast) o.gameObject.BroadcastMessage("OnPulledFromPool", SendMessageOptions.DontRequireReceiver);
         return o;
     }
 
@@ -97,10 +102,12 @@ public class Pool : MonoBehaviour
     /// permet de faire "spawn" un gameObject inactif depuis la pool à une certaine position et rotation. 
     /// à appeler à la place de GAMEOBJECT.INSTANTIATE()
     /// </summary>
-    public GameObject PullObjectFromPool(Vector3 Position, Quaternion rotation, Transform Parent = null)
+    public GameObject PullObjectFromPool(Vector3 Position, Quaternion rotation, Transform Parent = null, bool shouldBroadcast = true)
     {
-        GameObject o = PullObjectFromPool(Position, Parent);
+        GameObject o = PullObjectFromPool(Position, Parent,false);
         o.transform.rotation = rotation;
+
+        if (shouldBroadcast) o.gameObject.BroadcastMessage("OnPulledFromPool", SendMessageOptions.DontRequireReceiver);
         return o;
     }
 
@@ -116,7 +123,7 @@ public class Pool : MonoBehaviour
         if (!_freeIndices.Contains(ObjectToPool.Index))
         {
             _freeIndices.Add(ObjectToPool.Index);
-            ObjectToPool.gameObject.SendMessage("OnPutBackIntoPool", SendMessageOptions.DontRequireReceiver);
+            ObjectToPool.gameObject.BroadcastMessage("OnPutBackIntoPool", SendMessageOptions.DontRequireReceiver);
 
         }
 

@@ -46,6 +46,7 @@ public class Damageable : MonoBehaviour
         {
             if (TryGetComponent(out PooledObject pooledObject))
             {
+                JyrosManager.Instance.RemoveEntity();
                 pooledObject.GoBackIntoPool();
             }
             else

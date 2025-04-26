@@ -7,28 +7,38 @@ public class LookAtTarget : MonoBehaviour
 
     [SerializeField] LookBehaviour lookBehaviour;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnPulledFromPool()
+    public void OnPulledFromPool()
     {
         if(lookBehaviour == LookBehaviour.LookAtTargetTransformAlways|| lookBehaviour == LookBehaviour.LookAtPlayerOnStart)
         {
             target = PlayerMain.instance.transform;
         }
 
-        if(lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart)
+        if(lookBehaviour == LookBehaviour.LookAtMouseOnStart || lookBehaviour == LookBehaviour.LookAtMouseAlways)
         {
-            transform.LookAt(target,Vector3.forward);
-            enabled = false;
+            target = Mouse.Instance.transform;
+        }
+
+        if(lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtMouseOnStart)
+        {
+            Vector3 o = target.position - transform.position;
+            o.z = 0f;
+            o = o.normalized;
+            float a = Mathf.Rad2Deg * Mathf.Atan2(o.y, o.x);
+            transform.rotation = Quaternion.Euler(0, 0, a);
+            //Debug.Log(transform.eulerAngles);
+            this.enabled = false;
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector2 o = target.position - transform.position;
-        float a = Mathf.Rad2Deg * Mathf.Atan2(o.y,o.x);
-        a = Mathf.MoveTowardsAngle(transform.rotation.z,a,speed * Time.deltaTime);
-        transform.rotation = Quaternion.Euler(transform.rotation.x,transform.rotation.y,a);
+        Vector3 o = target.position - transform.position;
+        o.z = 0f;
+        o = o.normalized;
+        float a = Mathf.Rad2Deg * Mathf.Atan2(o.y, o.x);
+        float actualAngle = Mathf.MoveTowardsAngle(transform.eulerAngles.z, a, speed * Time.deltaTime);
+        transform.rotation = Quaternion.Euler(0, 0, a);
     }
 
     public enum LookBehaviour
@@ -36,6 +46,8 @@ public class LookAtTarget : MonoBehaviour
         LookAtTargetTransformAlways,
         LookAtTargetTransformAtStart,
         LookAtPlayerAlways,
-        LookAtPlayerOnStart
+        LookAtPlayerOnStart,
+        LookAtMouseAlways,
+        LookAtMouseOnStart,
     }
 }
