@@ -14,11 +14,13 @@ public class SoftDistanceConstraint : PhysicalObject
     // Update is called once per frame
     protected override void Update()
     {
-        Debug.Log("tvybitonj");
-        Vector3 offset = target.position - transform.position;
+        Vector3 offset = transform.position - target.position;
         float m = offset.magnitude;
+        Debug.Log(offset);
         offset = offset / m * Mathf.Clamp(m, distanceRange.x, distanceRange.y);
-        Velocity = Vector3.ClampMagnitude(offset, speed * Time.deltaTime);
+        Vector3 TargetPose = target.position + offset;
+        
+        Velocity = Vector3.ClampMagnitude(TargetPose-transform.position, speed * Time.deltaTime);
 
         base.Update();
     }
