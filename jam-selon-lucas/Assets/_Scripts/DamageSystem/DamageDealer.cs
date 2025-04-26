@@ -21,7 +21,7 @@ public class DamageDealer : MonoBehaviour
                     {
                         o.Die();
                     }
-                    else if (TryGetComponent(out PooledObject pooledObject))
+                    else if (transform.root.TryGetComponent(out PooledObject pooledObject))
                     {
                         pooledObject.GoBackIntoPool();
                     }

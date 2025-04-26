@@ -19,7 +19,7 @@ public class expDot : MonoBehaviour
     public void OnInstantiatedByPool()
     {
         target = PlayerMain.instance.transform;
-        TryGetComponent(out _asPooledObject);
+        transform.root.TryGetComponent(out _asPooledObject);
     }
 
     public void OnPulledFromPool()
