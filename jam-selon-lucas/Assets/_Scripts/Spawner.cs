@@ -5,12 +5,9 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] Pools _pool;
 
-    /// <summary>
-    /// cadence de tir en secondes ( si c'est 0 c'ets pas periodique)
-    /// </summary>
-    [SerializeField] float _fireRate;
-    [SerializeField] float TimeBetweenSalves = 0;
-    [SerializeField] short projectilesPerSalve = 1;
+    [SerializeField] public float fireRate;
+    [SerializeField] public float timeBetweenSalves = 0;
+    [SerializeField] public short projectilesPerSalve = 1;
 
     [SerializeField] bool _spawnsEnnemies;
 
@@ -33,9 +30,9 @@ public class Spawner : MonoBehaviour
             for(short i = 0; i < projectilesPerSalve; i++)
             {
                 Summon();
-                yield return new WaitForSeconds(_fireRate);
+                yield return new WaitForSeconds(fireRate);
             }
-            yield return new WaitForSeconds(TimeBetweenSalves - _fireRate);
+            yield return new WaitForSeconds(timeBetweenSalves - fireRate);
         }
     }
 

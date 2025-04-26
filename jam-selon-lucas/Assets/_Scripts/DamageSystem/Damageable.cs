@@ -11,6 +11,8 @@ public class Damageable : MonoBehaviour
 
     public Team team;
 
+    [SerializeField] float _xpGains;
+
     public UnityEvent onDamageTaken, onDeath = new();
 
     public const float invicibilityDuration = .2f;
@@ -64,9 +66,10 @@ public class Damageable : MonoBehaviour
     {
         await Awaitable.WaitForSecondsAsync(invicibilityDuration);
         onDeath?.Invoke();
-        
-        if (spawnThingOnDeath) PoolManager.Instance.ChoosePool(DeathObject).PullObjectFromPool(transform.position);
 
+        if(team == Team.Ennemy) PlayerMain.instance.playerXP.GainXP(_xpGains);
+
+        if (spawnThingOnDeath) PoolManager.Instance.ChoosePool(DeathObject).PullObjectFromPool(transform.position);
 
         if (destroyOnDeath)
         {
