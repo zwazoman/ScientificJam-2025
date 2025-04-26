@@ -5,7 +5,7 @@ public class DamageDealer : MonoBehaviour
     public float damage;
     public Team team;
 
-    bool DieOnContact = true;
+    [SerializeField] bool DieOnContact = false;
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,20 +14,19 @@ public class DamageDealer : MonoBehaviour
             if(AreEnnemies(team,damageable.team))
             {
                 damageable.TakeDamage(damage);
-            }
-
-            if(DieOnContact )
-            {
-                if(TryGetComponent(out Damageable o))
+                
+                if (DieOnContact)
                 {
-                    o.Die();
-                }
-                else if (TryGetComponent(out PooledObject pooledObject))
-                {
-                    pooledObject.GoBackIntoPool();
+                    if (TryGetComponent(out Damageable o))
+                    {
+                        o.Die();
+                    }
+                    else if (TryGetComponent(out PooledObject pooledObject))
+                    {
+                        pooledObject.GoBackIntoPool();
+                    }
                 }
             }
-
         }
     }
 
