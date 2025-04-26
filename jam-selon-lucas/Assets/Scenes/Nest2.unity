@@ -201,6 +201,7 @@ Transform:
   - {fileID: 1116476827}
   - {fileID: 485220713}
   - {fileID: 996200745}
+  - {fileID: 1186208573}
   m_Father: {fileID: 1967422816}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &415012725
@@ -226,6 +227,7 @@ MonoBehaviour:
   - {fileID: 996200746}
   - {fileID: 996200746}
   - {fileID: 996200746}
+  - {fileID: 1186208574}
   - {fileID: 996200746}
 --- !u!1 &420519354
 GameObject:
@@ -665,6 +667,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1186208572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1186208573}
+  - component: {fileID: 1186208574}
+  m_Layer: 0
+  m_Name: SenegalPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1186208573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186208572}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 415012724}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1186208574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186208572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c95b865e9b31b2459018503c37202b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 9135898473239137474, guid: 2fff959065bba9349860aefd58bc9e5d, type: 3}
+  _initialPoolSize: 50
 --- !u!1 &1342836086
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,10 +789,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pool: 3
-  _fireRate: 5
-  TimeBetweenSalves: 0
+  fireRate: 0
+  timeBetweenSalves: 0
   projectilesPerSalve: 1
   _spawnsEnnemies: 1
+  _randomSpawn: 0
+  _minSpawnRange: 0
+  _maxSpawnRange: 0
 --- !u!4 &1433630501
 Transform:
   m_ObjectHideFlags: 0

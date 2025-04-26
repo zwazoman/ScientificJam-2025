@@ -27,12 +27,12 @@ public class Spawner : MonoBehaviour
     {
         for (; ; )
         {
-            for(short i = 0; i < projectilesPerSalve; i++)
+            yield return new WaitForSeconds(timeBetweenSalves - fireRate);
+            for (short i = 0; i < projectilesPerSalve; i++)
             {
                 Summon();
                 yield return new WaitForSeconds(fireRate);
             }
-            yield return new WaitForSeconds(timeBetweenSalves - fireRate);
         }
     }
 

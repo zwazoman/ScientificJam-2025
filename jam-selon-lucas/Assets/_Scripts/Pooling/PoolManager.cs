@@ -13,8 +13,9 @@ public enum Pools
     Timeline,
     huitre,
     explosionVFX,
-    beans
-
+    beans,
+    Senegal,
+    Ant,
 }
 
 public class PoolManager : MonoBehaviour
