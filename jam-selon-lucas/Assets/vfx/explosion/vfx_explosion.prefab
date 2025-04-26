@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5186723762407082082}
   - component: {fileID: 354821208892951355}
   - component: {fileID: 6773665010619871635}
+  - component: {fileID: 5592970017381992095}
   m_Layer: 0
   m_Name: vfx_explosion
   m_TagString: Untagged
@@ -90,6 +91,9 @@ VFXRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_StaticBatchInfo:
@@ -123,6 +127,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -926869980983356183, guid: 0d07a91a13e3dad439010652bc38a74d, type: 2}
   m_audioClip: {fileID: 8300000, guid: fad00390c1a2afc44b9e831085e4eeca, type: 3}
+  m_Resource: {fileID: 8300000, guid: fad00390c1a2afc44b9e831085e4eeca, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -208,3 +213,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5592970017381992095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2559146916171440349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f0e7e53017e294da9d35843ca714f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxLifeTime: 5
