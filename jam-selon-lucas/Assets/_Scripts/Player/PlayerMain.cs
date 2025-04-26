@@ -15,7 +15,8 @@ public class PlayerMain : MonoBehaviour
     [SerializeField, Tooltip("tous les combien de niveaux on gagne un nouveau spawner")] public int _lvlUpgrade = 5;
     [SerializeField, Tooltip("tous les combien de niveaux un nouvel ennemi spawn")] public int _lvlEnemy = 3;
 
-    short _spawnerCPT;
+    short _playerSpawnerCPT;
+    short _enemySpawnerCPT;
 
     void Awake()
     {
@@ -26,46 +27,31 @@ public class PlayerMain : MonoBehaviour
 
     private void Start()
     {
-        playerXP.OnLvlUp += UpgradeGame;
-    }
-
-    void UpgradeGame()
-    {
-        UpdradePlayer();
-        UpgradeEnemies();
-    }
-
-    void UpdradePlayer()
-    {
-        UpgradeSpawners(playerGuns, 1.3f, 1.6f, 1.5f, 1.9f);
-
-        if (playerXP.currentLvl % _lvlUpgrade == 0)
+        playerXP.OnLvlUp += () =>
         {
-            _spawnerCPT++;
-            if (_spawnerCPT >= PlayerMain.instance.playerGuns.Count) return;
-            PlayerMain.instance.playerGuns[_spawnerCPT].gameObject.SetActive(true);
-        }
+            UpgradeSpawners(playerGuns, ref _playerSpawnerCPT, _lvlUpgrade, 1.3f, 1.6f, 0.65f, 0.78f);
+            UpgradeSpawners(enemySpawners, ref _enemySpawnerCPT, _lvlEnemy, 1.1f, 1.4f, 0.8f, 0.9f);
+        };
     }
 
-    void UpgradeEnemies()
-    {
-        UpgradeSpawners(enemySpawners, 1.1f, 1.4f, 1.3f, 1.5f);
-
-
-    }
-
-
-    void UpgradeSpawners(List<Spawner> spawners, float minProjPerSalveGrowth, float maxProjPerSalveGrowth, float minTimePerSalveGrowth, float maxTimePerSalveGrowth)
+    void UpgradeSpawners(List<Spawner> spawners, ref short cpt, int lvlOffset, float minProjPerSalveGrowth, float maxProjPerSalveGrowth, float minTimePerSalveGrowth, float maxTimePerSalveGrowth)
     {
         foreach (Spawner spawner in spawners)
         {
             if (spawner.gameObject.activeSelf)
             {
-                float newProjectilesPerSalves = spawner.projectilesPerSalve * UnityEngine.Random.Range(minProjPerSalveGrowth, maxProjPerSalveGrowth);
+                float newProjectilesPerSalves = spawner.projectilesPerSalve * Random.Range(minProjPerSalveGrowth, maxProjPerSalveGrowth);
                 spawner.projectilesPerSalve = newProjectilesPerSalves;
 
-                spawner.timeBetweenSalves *= UnityEngine.Random.Range(minTimePerSalveGrowth, maxTimePerSalveGrowth);
+                spawner.timeBetweenSalves *= Random.Range(minTimePerSalveGrowth, maxTimePerSalveGrowth);
             }
+        }
+
+        if (playerXP.currentLvl % lvlOffset == 0)
+        {
+            if (cpt >= spawners.Count) return;
+            cpt++;
+            spawners[cpt].gameObject.SetActive(true);
         }
     }
 
