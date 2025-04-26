@@ -10,10 +10,15 @@ public class lifeBar : MonoBehaviour
     {
         player = PlayerMain.instance.GetComponent<Damageable>();
         slider = GetComponent<Slider>();
+        slider.maxValue = player.hp;
         slider.value = player.hp;
-        player.onDamageTaken.AddListener(() => { slider.value = player.hp; slider.maxValue = player.hp; });
+        player.onDamageTaken.AddListener(UpdateSlider);
     }
 
+    void UpdateSlider()
+    {
+         slider.value = player.hp; 
+    }
     // Update is called once per frame
     void Update()
     {

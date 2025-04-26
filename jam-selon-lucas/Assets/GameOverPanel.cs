@@ -4,17 +4,17 @@ using UnityEngine.SceneManagement;
 public class GameOverPanel : MonoBehaviour
 {
 
-
+    public GameObject panel;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         PlayerMain.instance.gameObject.GetComponent<Damageable>().onDeath.AddListener(() =>
         {
-            gameObject.SetActive(true);
+            panel.gameObject.SetActive(true);
             Time.timeScale = 0;
         });
 
-        gameObject.SetActive(false) ;
+        panel.gameObject.SetActive(false) ;
     }
 
     public void Restart()
