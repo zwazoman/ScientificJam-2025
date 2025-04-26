@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6555298006251787680}
   - component: {fileID: 6631163187043877216}
   - component: {fileID: 1245410956071574262}
+  - component: {fileID: 4774385282899648254}
+  - component: {fileID: 2274785038440916942}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -107,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   team: 2
+  DieOnContact: 0
 --- !u!114 &8070997841213028816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,8 +158,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5273a6eb9fe55334c8c3b406f9baf9e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pool: 0
-  _fireRate: 1
+  _pool: 4
+  _fireRate: 0.2
+  TimeBetweenSalves: 1.5
+  projectilesPerSalve: 3
   _spawnsEnnemies: 0
 --- !u!58 &1245410956071574262
 CircleCollider2D:
@@ -194,6 +199,50 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!50 &4774385282899648254
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7513358462158656990}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2274785038440916942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7513358462158656990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5273a6eb9fe55334c8c3b406f9baf9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: 0
+  _fireRate: 0.5
+  TimeBetweenSalves: 0
+  projectilesPerSalve: 1
+  _spawnsEnnemies: 0
 --- !u!1 &7788594472775124811
 GameObject:
   m_ObjectHideFlags: 0

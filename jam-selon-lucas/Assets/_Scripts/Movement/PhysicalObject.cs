@@ -11,8 +11,8 @@ public class PhysicalObject : MonoBehaviour
     }
     protected virtual void Update()
     {
-        rb.linearVelocity = Velocity;
-        //transform.position += (Vector3)Velocity * Time.deltaTime;
+        if(rb!=null) rb.linearVelocity = Velocity;
+        else transform.position += (Vector3)Velocity * Time.deltaTime;
     }
 
 }

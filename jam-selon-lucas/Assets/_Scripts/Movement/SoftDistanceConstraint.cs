@@ -16,7 +16,6 @@ public class SoftDistanceConstraint : PhysicalObject
     {
         Vector3 offset = transform.position - target.position;
         float m = offset.magnitude;
-        Debug.Log(offset);
         offset = offset / m * Mathf.Clamp(m, distanceRange.x, distanceRange.y);
         Vector3 TargetPose = target.position + offset;
         

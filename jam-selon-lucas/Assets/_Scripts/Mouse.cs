@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Mouse : MonoBehaviour
 {
+    Camera cam;
+
     #region Singleton
     private static Mouse instance;
 
@@ -9,11 +11,11 @@ public class Mouse : MonoBehaviour
     {
         get
         {
-            if (instance == null)
+            /*if (instance == null)
             {
                 GameObject go = new GameObject("Mouse");
                 instance = go.AddComponent<Mouse>();
-            }
+            }*/
             return instance;
         }
     }
@@ -21,11 +23,15 @@ public class Mouse : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        cam = Camera.main;
+        Debug.Log(cam);
     }
     #endregion
 
     private void Update()
     {
-        transform.position = Input.mousePosition;
+        Vector3 pose = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, cam.nearClipPlane));
+        pose.z = 0;
+        transform.position = pose;
     }
 }
