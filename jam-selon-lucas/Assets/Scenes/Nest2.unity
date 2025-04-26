@@ -134,6 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579043176}
   - component: {fileID: 579043177}
+  - component: {fileID: 579043178}
   m_Layer: 0
   m_Name: JyrosManager
   m_TagString: Untagged
@@ -168,10 +169,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 774c3d080532a6547ab90ef2822f3f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jyrosSummonThreshold: 183
-  jyrosUnSummonThreshold: 205
+  jyrosSummonThreshold: 5
+  jyrosUnSummonThreshold: 4
   EntityCpt: 0
   jyros: {fileID: 0}
+--- !u!114 &579043178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579043175}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5273a6eb9fe55334c8c3b406f9baf9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: 1
+  fireRate: 0
+  timeBetweenSalves: 0
+  projectilesPerSalve: 1
+  _spawnsEnnemies: 0
+  _randomSpawn: 1
+  _minSpawnRange: 8.2
+  _maxSpawnRange: 25.8
 --- !u!4 &591729284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8959708469177597959, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
@@ -185,66 +206,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1062612006061275289, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: _maxSpawnRange
-      value: 12.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 1062612006061275289, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: _minSpawnRange
-      value: 8.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982090275401398636, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: _maxSpawnRange
-      value: 12.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 2982090275401398636, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: _minSpawnRange
-      value: 8.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 7721730184944121252, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: _randomSpawn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7721730184944121252, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: _maxSpawnRange
-      value: 12.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 7721730184944121252, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: _minSpawnRange
-      value: 8.73
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731348537981044214, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731348537981044214, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731348537981044214, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181442707010750734, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181442707010750734, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8181442707010750734, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8407261928771870940, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: _maxSpawnRange
-      value: 12.69
-      objectReference: {fileID: 0}
-    - target: {fileID: 8407261928771870940, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
-      propertyPath: _minSpawnRange
-      value: 8.73
-      objectReference: {fileID: 0}
     - target: {fileID: 8540346293504889938, guid: f57a7af3a3b749b42bec1e14c464acd5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.04
@@ -677,7 +638,7 @@ Transform:
   m_GameObject: {fileID: 1967422815}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.613729, y: -3.2453854, z: -1.6494157}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

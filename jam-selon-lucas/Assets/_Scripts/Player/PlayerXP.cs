@@ -18,12 +18,14 @@ public class PlayerXP : MonoBehaviour
 
     public void GainXP(float value)
     {
+        print("gain xp");
+
         OnGainXP?.Invoke();
 
         currentXP += value;
         totalXP += value;
 
-        if(currentXP > maxXp)
+        if(currentXP >= maxXp)
         {
             float remainder = currentXP - maxXp;
             LvlUp();

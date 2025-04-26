@@ -1,5 +1,74 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5792811163660403046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3659300945199659661}
+  - component: {fileID: 1580131617037700351}
+  - component: {fileID: 201253179828590709}
+  m_Layer: 0
+  m_Name: JyrosManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3659300945199659661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792811163660403046}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.04, y: 0.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8540346293504889938}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1580131617037700351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792811163660403046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774c3d080532a6547ab90ef2822f3f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jyrosSummonThreshold: 5
+  jyrosUnSummonThreshold: 4
+  EntityCpt: 0
+  jyros: {fileID: 0}
+--- !u!114 &201253179828590709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5792811163660403046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5273a6eb9fe55334c8c3b406f9baf9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: 1
+  fireRate: 0
+  timeBetweenSalves: 0
+  projectilesPerSalve: 1
+  _spawnsEnnemies: 0
+  _randomSpawn: 1
+  _minSpawnRange: 8.2
+  _maxSpawnRange: 25.8
 --- !u!1 &8415746697093701201
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +244,7 @@ Transform:
   - {fileID: 5510868571191852453}
   - {fileID: 8181442707010750734}
   - {fileID: 7731348537981044214}
+  - {fileID: 3659300945199659661}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1389567182734701669
@@ -488,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: timeBetweenSalves
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: projectilesPerSalve

@@ -37,6 +37,11 @@ public class JyrosManager : MonoBehaviour
         instance = this;
     }
 
+    private void Update()
+    {
+        print(EntityCpt);
+    }
+
     public void AddEntity(int value = 1)
     {
         EntityCpt += value;
@@ -53,6 +58,7 @@ public class JyrosManager : MonoBehaviour
 
         if(EntityCpt <=  jyrosUnSummonThreshold && jyros != null)
         {
+            print("unsummon jyros");
             OnJyrosUnSummon?.Invoke();
         }
     }

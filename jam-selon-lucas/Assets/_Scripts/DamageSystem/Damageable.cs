@@ -35,8 +35,6 @@ public class Damageable : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log("degats : " + gameObject.name + " " + CanTakeDamage);
-
         if (CanTakeDamage)
         {
             hp -= (float)damage;
@@ -68,8 +66,9 @@ public class Damageable : MonoBehaviour
     {
         await Awaitable.WaitForSecondsAsync(invicibilityDuration);
         onDeath?.Invoke();
+        JyrosManager.Instance.RemoveEntity();
 
-        if(team == Team.Ennemy) PlayerMain.instance.playerXP.GainXP(_xpGains);
+        if (team == Team.Ennemy) PlayerMain.instance.playerXP.GainXP(_xpGains);
 
         if (spawnThingOnDeath) PoolManager.Instance.ChoosePool(DeathObject).PullObjectFromPool(transform.position);
 
@@ -77,7 +76,6 @@ public class Damageable : MonoBehaviour
         {
             if (transform.root.TryGetComponent(out PooledObject pooledObject))
             {
-                JyrosManager.Instance.RemoveEntity();
                 pooledObject.GoBackIntoPool();
             }
             else
