@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
 
     public void OnInstantiatedByPool()
     {
-        TryGetComponent(out _pooledObject);
+        transform.root.TryGetComponent(out _pooledObject);
     }
 
     public void OnPulledFromPool()
