@@ -552,6 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pool: 0
   _fireRate: 1
+  _spawnsEnnemies: 0
 --- !u!114 &1217971952
 MonoBehaviour:
   m_ObjectHideFlags: 0
