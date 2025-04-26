@@ -11,11 +11,13 @@ public class Spawner : MonoBehaviour
     [SerializeField] float _fireRate;
 
     [SerializeField] bool _spawnsEnnemies;
-    
+
+
 
     private void Start()
     {
-        StartCoroutine(PeriodicShoot());
+        if(_fireRate != 0)
+            StartCoroutine(PeriodicShoot());
     }
 
     IEnumerator PeriodicShoot()
