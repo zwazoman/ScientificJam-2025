@@ -7,7 +7,10 @@ public class PoisonZone : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Damageable damageable)) damageable.TakeDamage(DamagePerSeconds * Damageable.invicibilityDuration);
+        if (collision.gameObject.TryGetComponent(out Damageable damageable))
+        {
+            damageable.TakeDamage(DamagePerSeconds * Damageable.invicibilityDuration);
+        }
     }
 
 }

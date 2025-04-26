@@ -35,6 +35,8 @@ public class Damageable : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        Debug.Log("degats : " + gameObject.name + " " + CanTakeDamage);
+
         if (CanTakeDamage)
         {
             hp -= (float)damage;
