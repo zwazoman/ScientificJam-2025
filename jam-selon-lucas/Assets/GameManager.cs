@@ -9,5 +9,4 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    
 }

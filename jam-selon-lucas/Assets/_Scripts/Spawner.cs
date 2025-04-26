@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] public float fireRate;
     [SerializeField] public float timeBetweenSalves = 0;
-    [SerializeField] public short projectilesPerSalve = 1;
+    [SerializeField] public float projectilesPerSalve = 1;
 
     [SerializeField] bool _spawnsEnnemies;
 

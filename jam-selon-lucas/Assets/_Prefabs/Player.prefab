@@ -122,6 +122,7 @@ MonoBehaviour:
   maxXp: 0
   currentXP: 0
   currentLvl: 0
+  totalXP: 0
 --- !u!114 &1063516980249662979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,10 +136,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pool: 0
-  _fireRate: 0.1
-  TimeBetweenSalves: 0.3
+  fireRate: 0
+  timeBetweenSalves: 0
   projectilesPerSalve: 2
   _spawnsEnnemies: 0
+  _randomSpawn: 0
+  _minSpawnRange: 0
+  _maxSpawnRange: 0
 --- !u!114 &6219687107843549713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,12 +158,15 @@ MonoBehaviour:
   hp: 100
   destroyOnDeath: 0
   team: 1
+  _xpGains: 0
   onDamageTaken:
     m_PersistentCalls:
       m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  spawnThingOnDeath: 1
+  DeathObject: 8
 --- !u!114 &-320016521738527368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +179,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15b173199b940a44b8e31ea9b73dc68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerXP: {fileID: 0}
+  playerGuns: []
+  enemySpawners: []
+  _lvlUpgrade: 5
+  _lvlEnemy: 3
 --- !u!58 &6767569186941367531
 CircleCollider2D:
   m_ObjectHideFlags: 0
