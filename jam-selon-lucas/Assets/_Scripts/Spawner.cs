@@ -49,7 +49,6 @@ public class Spawner : MonoBehaviour
 
     public GameObject Summon()
     {
-
         Vector2 choosenSpawnPos;
 
         if (_randomSpawn)
@@ -76,6 +75,17 @@ public class Spawner : MonoBehaviour
                 break;
             case Pools.huitre:
                 SFXManager.Instance.PlaySFXClipAtPosition(Sounds.Oyster,transform.position);
+                break;
+            case Pools.TowardsMouse:
+                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.MainProj,transform.position);
+                break;
+            case Pools.waveProjectile:
+                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.MainProj, transform.position);
+
+                break;
+            case Pools.TargetedMissile:
+                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.MainProj, transform.position);
+
                 break;
         }
 
