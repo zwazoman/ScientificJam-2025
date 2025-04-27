@@ -60,7 +60,8 @@ public class Spawner : MonoBehaviour
                 SFXManager.Instance.PlaySFXClipAtPosition(Sounds.DroneShoot,transform.position);
                 break;
             case Pools.Punch:
-                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.Punch,transform.position); 
+                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.Punch,transform.position);
+                print("punch");
                 break;
             case Pools.huitre:
                 SFXManager.Instance.PlaySFXClipAtPosition(Sounds.Oyster,transform.position);
