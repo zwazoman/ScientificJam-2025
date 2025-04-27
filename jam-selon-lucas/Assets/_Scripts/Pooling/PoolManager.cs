@@ -17,7 +17,8 @@ public enum Pools
     Senegal,
     Ant,
     Punch,
-    waveProjectile
+    waveProjectile,
+    TargetedMissile,
 }
 
 public class PoolManager : MonoBehaviour

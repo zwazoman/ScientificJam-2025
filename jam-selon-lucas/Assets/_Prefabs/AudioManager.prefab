@@ -95,6 +95,18 @@ MonoBehaviour:
         MixerGroup: {fileID: 0}
         tempClipList: []
         tempClip: {fileID: 0}
+    - Key: MainProj
+      Value:
+        ClipList:
+        - {fileID: 8300000, guid: 702aa69c5e22247418803a5b6216de4b, type: 3}
+        - {fileID: 8300000, guid: 5412a32a31f21a143b35630213a90150, type: 3}
+        - {fileID: 8300000, guid: cd7520a5dfb72d14cbc4425a8a5e675d, type: 3}
+        Volume: 0.71
+        Pitch: 1
+        RandomType: 1
+        MixerGroup: {fileID: 0}
+        tempClipList: []
+        tempClip: {fileID: 0}
   _soundTester: 0
 --- !u!82 &704310879072218186
 AudioSource:

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5152199652373424467}
   - component: {fileID: 3413668944173478300}
   - component: {fileID: 2200559466914928909}
+  - component: {fileID: 1601502651086896455}
   m_Layer: 0
   m_Name: Senegal
   m_TagString: Untagged
@@ -107,7 +108,7 @@ MonoBehaviour:
   hp: 10
   destroyOnDeath: 1
   team: 2
-  _xpGains: 0
+  _xpGains: 10
   onDamageTaken:
     m_PersistentCalls:
       m_Calls: []
@@ -213,7 +214,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 9b383c4032a2b16438e567ed2fc7fb53, type: 3}
   m_Resource: {fileID: 8300000, guid: 9b383c4032a2b16438e567ed2fc7fb53, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.342
+  m_Volume: 0.246
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -222,7 +223,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 2
-  MaxDistance: 20
+  MaxDistance: 15
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -297,3 +298,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1601502651086896455
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9135898473239137474}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6d4e58c003e93134fad6df8f740f0aa0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
