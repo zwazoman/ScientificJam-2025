@@ -39,6 +39,9 @@ public class Spawner : MonoBehaviour
         for (; ; )
         {
             yield return new WaitForSeconds(timeBetweenSalves - fireRate);
+
+            if(_pool == Pools.waveProjectile) SFXManager.Instance.PlaySFXClipAtPosition(Sounds.MainProj, transform.position, false,false,3);
+
             for (short i = 0; i < projectilesPerSalve; i++)
             {
                 Summon();
@@ -78,10 +81,6 @@ public class Spawner : MonoBehaviour
                 break;
             case Pools.TowardsMouse:
                 SFXManager.Instance.PlaySFXClipAtPosition(Sounds.MainProj,transform.position);
-                break;
-            case Pools.waveProjectile:
-                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.MainProj, transform.position);
-
                 break;
             case Pools.TargetedMissile:
                 SFXManager.Instance.PlaySFXClipAtPosition(Sounds.MainProj, transform.position);
