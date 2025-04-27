@@ -1,21 +1,36 @@
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Endo : MonoBehaviour
 {
-    PooledObject pooledObject;
+    public GameObject panel;
 
-    private void OnPulledFromPool()
+
+
+    private async void Start()
     {
+        PlayerMain.instance.GetComponent<Damageable>().onDeath.AddListener(()=>Destroy(gameObject));
+        while(isActiveAndEnabled)
+        {
+            await Awaitable.WaitForSecondsAsync(Random.Range(45, 70));
+            activate();
+        }
+    }
+
+    private void activate()
+    {
+        panel.SetActive(true);
         Time.timeScale = 0;
-        pooledObject = transform.root.GetComponent<PooledObject>();
     }
 
     private void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && panel.activeSelf)
         {
             Time.timeScale = 1;
-            pooledObject.GoBackIntoPool();
+            panel.SetActive(false);
         }
     }
 }
