@@ -38,6 +38,7 @@ public class Spawner : MonoBehaviour
 
     public GameObject Summon()
     {
+
         Vector2 choosenSpawnPos;
 
         if (_randomSpawn)
@@ -50,6 +51,14 @@ public class Spawner : MonoBehaviour
         if (_spawnsEnnemies)
         {
             JyrosManager.Instance.AddEntity();
+        }
+
+        //les sons
+        switch (_pool)
+        {
+            case Pools.DroneBullet:
+                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.DroneShoot,transform.position);
+                break;
         }
 
         return PoolManager.Instance.ChoosePool(_pool).PullObjectFromPool(choosenSpawnPos);
