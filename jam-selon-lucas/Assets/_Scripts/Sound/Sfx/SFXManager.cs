@@ -166,25 +166,31 @@ public class SFXManager : MonoBehaviour
     /// <param name="pitchFactor"></param>
     public AudioSource PlaySFXClipAtPosition(Sounds choosenSound, Vector3 position, bool is2DSound = false, bool bypassesEffects = false, float volumeFactor = 1f, float pitchFactor = 1f)
     {
-        AudioSource audioSource = UseFromPool();
+        try { 
+            AudioSource audioSource = UseFromPool();
 
-        Clip choosenClip = _clips[(int)choosenSound];
+            Clip choosenClip = _clips[(int)choosenSound];
 
-        try
+            try
+            {
+                AudioClip audioClip = ChooseRandomClip(choosenClip);
+                audioSource.clip = audioClip;
+            }
+            catch(NoSoundsFound e)
+            {
+                Debug.LogException(e);
+                return null;
+            }
+
+            audioSource.gameObject.transform.position = position;
+
+            return AudioSourceHandle(audioSource, choosenClip.Volume * volumeFactor, choosenClip.Pitch * pitchFactor, is2DSound, bypassesEffects, choosenClip.MixerGroup);
+        
+        }catch(Exception e)
         {
-            AudioClip audioClip = ChooseRandomClip(choosenClip);
-            audioSource.clip = audioClip;
-        }
-        catch(NoSoundsFound e)
-        {
-            Debug.LogException(e);
+            Debug.LogError(e);
             return null;
         }
-
-        audioSource.gameObject.transform.position = position;
-
-        return AudioSourceHandle(audioSource, choosenClip.Volume * volumeFactor, choosenClip.Pitch * pitchFactor, is2DSound, bypassesEffects, choosenClip.MixerGroup);
-
     }
 
     /// <summary>

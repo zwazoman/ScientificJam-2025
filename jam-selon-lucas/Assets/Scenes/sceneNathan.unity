@@ -1695,7 +1695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 773830654}
   - component: {fileID: 773830656}
-  - component: {fileID: 773830655}
+  - component: {fileID: 773830657}
   m_Layer: 5
   m_Name: Slider_RAM
   m_TagString: Untagged
@@ -1726,18 +1726,6 @@ RectTransform:
   m_AnchoredPosition: {x: 558.1, y: 89.01001}
   m_SizeDelta: {x: 931.2, y: 231.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &773830655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773830653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 429b3c97ec178dc4f884944d20ff22ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &773830656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1789,6 +1777,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &773830657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773830653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40302f72ec10d0140bb7709e788834d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 2064931730}
 --- !u!1 &859060962
 GameObject:
   m_ObjectHideFlags: 0
