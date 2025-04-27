@@ -23,6 +23,12 @@ public class PlayerMain : MonoBehaviour
         instance = this;
 
         TryGetComponent(out playerXP);
+
+        foreach(var p in playerGuns)
+        {
+            p.enabled = false;
+        }
+        playerGuns[0].enabled = true;
     }
 
     private void Start()

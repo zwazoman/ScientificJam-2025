@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 639691191592212040}
   - component: {fileID: 4120612298526055497}
   - component: {fileID: 2173698329116993446}
-  - component: {fileID: 3849892849957034753}
   - component: {fileID: -8432269754468372216}
   - component: {fileID: 1941530456419975667}
   - component: {fileID: 4008285279143747456}
@@ -54,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   target: {fileID: 0}
-  lookBehaviour: 5
+  lookBehaviour: 3
   RandomOffsetMagnitude: 0
 --- !u!114 &639691191592212040
 MonoBehaviour:
@@ -68,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4678c2f2a9b447547b85cc743b927c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: -30
   randomAdditionnalSpeedMagnitude: 0
 --- !u!212 &4120612298526055497
 SpriteRenderer:
@@ -115,7 +114,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5566037, g: 0.9902587, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -140,19 +139,6 @@ MonoBehaviour:
   damage: 5
   team: 1
   DieOnContact: 1
---- !u!114 &3849892849957034753
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3206635115544471007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f0e7e53017e294da9d35843ca714f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxLifeTime: 5
 --- !u!58 &-8432269754468372216
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -201,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f0e7e53017e294da9d35843ca714f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxLifeTime: 8
+  MaxLifeTime: 4
 --- !u!50 &4008285279143747456
 Rigidbody2D:
   serializedVersion: 5
@@ -255,7 +241,7 @@ Transform:
   m_GameObject: {fileID: 3223980691114648141}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.6928203, w: -0.7211103}
-  m_LocalPosition: {x: 0.1217, y: -0.0103, z: 0}
+  m_LocalPosition: {x: 0.123, y: -0.001, z: 0}
   m_LocalScale: {x: 0.17757599, y: 0.4055085, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -306,7 +292,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.7040162, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
