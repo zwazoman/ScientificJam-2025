@@ -3,15 +3,16 @@ using UnityEngine;
 public class HardDistanceConstraint : MonoBehaviour
 {
     [SerializeField] Transform target ;
-    [SerializeField] Vector2 distanceRange;
+    [SerializeField] float distanceRange = 1;
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 offset =  target.position - transform.position;
-        float m = offset.magnitude;
-        offset = offset / m * Mathf.Clamp(m, distanceRange.x, distanceRange.y);
+        Vector3 offset =   transform.position - target.position;
+        offset.z = 0;
+        //float m = offset.magnitude;
+        offset = Vector3.ClampMagnitude(offset,distanceRange);
 
-        transform.position += offset;
+        transform.position = target.position + offset;
     }
 }
