@@ -10,5 +10,8 @@ public class ExpSlider : MonoBehaviour
         slider.maxValue= PlayerMain.instance.playerXP.maxXp;
         slider.value = PlayerMain.instance.playerXP.currentXP;
         PlayerMain.instance.playerXP.OnGainXP += () => { slider.value = PlayerMain.instance.playerXP.currentXP; };
+        PlayerMain.instance.playerXP.OnLvlUp += () => {
+            slider.maxValue = PlayerMain.instance.playerXP.maxXp;
+            slider.value = PlayerMain.instance.playerXP.currentXP;  };
     }
 }
