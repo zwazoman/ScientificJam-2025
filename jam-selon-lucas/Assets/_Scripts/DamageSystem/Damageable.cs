@@ -33,9 +33,14 @@ public class Damageable : MonoBehaviour
 
     void OnInstantiatedByPool()
     {
-        _isDead = false;
+        
         if (spriteRenderer==null)TryGetComponent(out spriteRenderer);
         baseScale = transform.localScale;
+    }
+
+    public void OnPulledFromPool()
+    {
+        _isDead = false;
     }
 
     public void TakeDamage(float damage)
