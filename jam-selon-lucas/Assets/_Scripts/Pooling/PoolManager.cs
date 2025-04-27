@@ -19,6 +19,7 @@ public enum Pools
     Punch,
     waveProjectile,
     TargetedMissile,
+    Endometriose,
 }
 
 public class PoolManager : MonoBehaviour
