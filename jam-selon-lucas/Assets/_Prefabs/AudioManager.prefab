@@ -45,17 +45,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a62cfd4b596e241b92ae866cf432a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poolSize: 0
+  _poolSize: 50
   _SFXObject: {fileID: 3662379104358310079, guid: a49ccc0080c0b7f4c995cd988b908270, type: 3}
   _soundsDict:
     _serializedList:
-    - Key: Jyros
+    - Key: Punch
       Value:
         ClipList:
-        - {fileID: 8300000, guid: ae00c39b6ce88dd49a0a6b6498c91378, type: 3}
-        Volume: 1
+        - {fileID: 8300000, guid: a56ec41b13ea4f44a88cfdbee929b301, type: 3}
+        - {fileID: 8300000, guid: be6bb96027cad444a8f9895c4ac567fa, type: 3}
+        - {fileID: 8300000, guid: fab08efbb1b05ce498c25065a67a21f1, type: 3}
+        Volume: 0.59
         Pitch: 1
-        RandomType: 0
+        RandomType: 1
+        MixerGroup: {fileID: 0}
+        tempClipList: []
+        tempClip: {fileID: 0}
+    - Key: DroneShoot
+      Value:
+        ClipList:
+        - {fileID: 8300000, guid: f7788e01b20117b478ea768b6e434a27, type: 3}
+        - {fileID: 8300000, guid: ba52b98b39c53ee42ab656b68dd084c5, type: 3}
+        - {fileID: 8300000, guid: ee5f9d480b8595a44bc80f7a574363f9, type: 3}
+        Volume: 0.53
+        Pitch: 1
+        RandomType: 2
+        MixerGroup: {fileID: 0}
+        tempClipList: []
+        tempClip: {fileID: 0}
+    - Key: Oyster
+      Value:
+        ClipList:
+        - {fileID: 8300000, guid: e0aa3d36c2207c94ebc05d6bc6885957, type: 3}
+        - {fileID: 8300000, guid: 9e7b63482c3b42448946048c3fa30eb4, type: 3}
+        - {fileID: 8300000, guid: ee6f49de600887b43962f144c335af44, type: 3}
+        Volume: 0.59
+        Pitch: 1
+        RandomType: 1
         MixerGroup: {fileID: 0}
         tempClipList: []
         tempClip: {fileID: 0}
