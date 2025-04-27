@@ -67,8 +67,8 @@ MonoBehaviour:
   projectilesPerSalve: 1
   _spawnsEnnemies: 0
   _randomSpawn: 1
-  _minSpawnRange: 8.2
-  _maxSpawnRange: 25.8
+  _minSpawnRange: 11
+  _maxSpawnRange: 14
 --- !u!1 &8415746697093701201
 GameObject:
   m_ObjectHideFlags: 0

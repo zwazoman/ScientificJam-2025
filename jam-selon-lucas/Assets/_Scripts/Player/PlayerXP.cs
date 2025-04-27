@@ -41,6 +41,7 @@ public class PlayerXP : MonoBehaviour
 
         print("lvl UP !");
         OnLvlUp?.Invoke();
+        SFXManager.Instance.PlaySFXClip(Sounds.LVLUP);
     }
 
 
