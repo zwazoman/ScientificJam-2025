@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505640226860651080}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5273a6eb9fe55334c8c3b406f9baf9e4, type: 3}
   m_Name: 
@@ -121,6 +121,58 @@ MonoBehaviour:
   _randomSpawn: 1
   _minSpawnRange: 11
   _maxSpawnRange: 14
+--- !u!1 &4621091819260580189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 490685268674995848}
+  - component: {fileID: 2620484377862168071}
+  m_Layer: 0
+  m_Name: Endo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &490685268674995848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4621091819260580189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7731348537981044214}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2620484377862168071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4621091819260580189}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5273a6eb9fe55334c8c3b406f9baf9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: 15
+  fireRate: 1
+  timeBetweenSalves: 100
+  projectilesPerSalve: 1
+  _spawnsEnnemies: 0
+  _randomSpawn: 0
+  _minSpawnRange: 0
+  _maxSpawnRange: 0
 --- !u!1 &8415746697093701201
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +314,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01224da3d3937847a5b8e73bc761c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8753652061143733387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 109476841811877859}
+  - component: {fileID: 3156694321353162748}
+  m_Layer: 0
+  m_Name: TargetedMissiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &109476841811877859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753652061143733387}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8181442707010750734}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3156694321353162748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8753652061143733387}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5273a6eb9fe55334c8c3b406f9baf9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: 14
+  fireRate: 1
+  timeBetweenSalves: 5
+  projectilesPerSalve: 1
+  _spawnsEnnemies: 0
+  _randomSpawn: 0
+  _minSpawnRange: 0
+  _maxSpawnRange: 0
 --- !u!1 &9114388765541591512
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,13 +536,15 @@ MonoBehaviour:
   playerGuns:
   - {fileID: 7588842117536495181}
   - {fileID: 6126687484554139188}
+  - {fileID: 3156694321353162748}
   enemySpawners:
   - {fileID: 7721730184944121252}
   - {fileID: 2982090275401398636}
   - {fileID: 8407261928771870940}
   - {fileID: 1062612006061275289}
-  _lvlUpgrade: 5
-  _lvlEnemy: 3
+  - {fileID: 2620484377862168071}
+  _lvlUpgrade: 3
+  _lvlEnemy: 2
 --- !u!58 &6767569186941367531
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -688,6 +794,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2318559200105535554}
+    - targetCorrespondingSourceObject: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 109476841811877859}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
 --- !u!114 &7588842117536495181 stripped
@@ -856,7 +965,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5075303648918421313, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 490685268674995848}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
 --- !u!114 &1062612006061275289 stripped

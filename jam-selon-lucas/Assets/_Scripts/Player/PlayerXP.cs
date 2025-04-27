@@ -18,8 +18,6 @@ public class PlayerXP : MonoBehaviour
 
     public void GainXP(float value)
     {
-        print("gain xp");
-
         OnGainXP?.Invoke();
 
         currentXP += value;
