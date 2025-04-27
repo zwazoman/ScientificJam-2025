@@ -121,58 +121,6 @@ MonoBehaviour:
   _randomSpawn: 1
   _minSpawnRange: 11
   _maxSpawnRange: 14
---- !u!1 &4621091819260580189
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 490685268674995848}
-  - component: {fileID: 2620484377862168071}
-  m_Layer: 0
-  m_Name: Endo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &490685268674995848
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4621091819260580189}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7731348537981044214}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2620484377862168071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4621091819260580189}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5273a6eb9fe55334c8c3b406f9baf9e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pool: 15
-  fireRate: 1
-  timeBetweenSalves: 100
-  projectilesPerSalve: 1
-  _spawnsEnnemies: 0
-  _randomSpawn: 0
-  _minSpawnRange: 0
-  _maxSpawnRange: 0
 --- !u!1 &8415746697093701201
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +488,6 @@ MonoBehaviour:
   enemySpawners:
   - {fileID: 7721730184944121252}
   - {fileID: 2982090275401398636}
-  - {fileID: 2620484377862168071}
   - {fileID: 8407261928771870940}
   - {fileID: 1062612006061275289}
   _lvlUpgrade: 3
@@ -965,10 +912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5075303648918421313, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 490685268674995848}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
 --- !u!114 &1062612006061275289 stripped
