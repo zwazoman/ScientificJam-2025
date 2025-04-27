@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        if(timeBetweenSalves != 0)
+        if(fireRate != 0)
             StartCoroutine(PeriodicShoot());
     }
 
@@ -44,6 +44,8 @@ public class Spawner : MonoBehaviour
             choosenSpawnPos = Random.insideUnitCircle.normalized * Random.Range(_minSpawnRange,_maxSpawnRange);
         else
             choosenSpawnPos = transform.position;
+
+        Debug.Log(_pool);
 
         if (_spawnsEnnemies)
         {

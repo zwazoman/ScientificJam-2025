@@ -124,12 +124,14 @@ MonoBehaviour:
   hp: 3
   destroyOnDeath: 1
   team: 2
+  _xpGains: 0
   onDamageTaken:
     m_PersistentCalls:
       m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  spriteRenderer: {fileID: 0}
   spawnThingOnDeath: 1
   DeathObject: 8
 --- !u!114 &8193463600259633056
@@ -161,6 +163,7 @@ MonoBehaviour:
   speed: 2
   target: {fileID: 0}
   lookBehaviour: 5
+  RandomOffsetMagnitude: 0
 --- !u!114 &7427246882556392061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,7 +235,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 91.91
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0

@@ -23,6 +23,8 @@ public class Damageable : MonoBehaviour
     [SerializeField] bool spawnThingOnDeath = true;
     [SerializeField] Pools DeathObject = Pools.explosionVFX;
 
+    Vector3 baseScale;
+
     private void Awake()
     {
         OnInstantiatedByPool();
@@ -31,6 +33,7 @@ public class Damageable : MonoBehaviour
     void OnInstantiatedByPool()
     {
         if(spriteRenderer==null)TryGetComponent(out spriteRenderer);
+        baseScale = transform.localScale;
     }
 
     public void TakeDamage(float damage)
@@ -40,9 +43,13 @@ public class Damageable : MonoBehaviour
             hp -= (float)damage;
 
             Sequence s = DOTween.Sequence();
-            s.Append( spriteRenderer.DOColor(Color.red, .1f));
-            s.Append( spriteRenderer.DOColor(Color.white, .1f));
- 
+            s.Append( spriteRenderer.DOColor(Color.red, invicibilityDuration*.5f));
+            s.Append( spriteRenderer.DOColor(Color.white, invicibilityDuration*.5f));
+
+            Sequence s2 = DOTween.Sequence();
+            s2.Append(spriteRenderer.transform.DOScale(baseScale * 1.5f,invicibilityDuration*.5f));
+            s2.Append(spriteRenderer.transform.DOScale(baseScale * 1f,invicibilityDuration*.5f));
+
             onDamageTaken?.Invoke();
 
             if (hp <= 0)
@@ -65,7 +72,7 @@ public class Damageable : MonoBehaviour
 
     public async void Die()
     {
-        await Awaitable.WaitForSecondsAsync(invicibilityDuration);
+        await Awaitable.WaitForSecondsAsync(invicibilityDuration*.5f);
         onDeath?.Invoke();
         JyrosManager.Instance.RemoveEntity();
 

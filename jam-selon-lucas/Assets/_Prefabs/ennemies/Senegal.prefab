@@ -113,6 +113,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  spriteRenderer: {fileID: 0}
   spawnThingOnDeath: 1
   DeathObject: 8
 --- !u!58 &1904963235155510779
@@ -165,8 +166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pool: 7
   fireRate: 0.1
-  timeBetweenSalves: 5
-  projectilesPerSalve: 10
+  timeBetweenSalves: 2.5
+  projectilesPerSalve: 5
   _spawnsEnnemies: 1
   _randomSpawn: 0
   _minSpawnRange: 0

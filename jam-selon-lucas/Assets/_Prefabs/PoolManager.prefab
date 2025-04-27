@@ -46,6 +46,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 2559146916171440349, guid: 971d102112674d14b8661123d9aefdbc, type: 3}
   _initialPoolSize: 50
+--- !u!1 &2142221937516300816
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2628592461640358027}
+  - component: {fileID: 8590997075959311215}
+  m_Layer: 0
+  m_Name: HuitrePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2628592461640358027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142221937516300816}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8542989701716603461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8590997075959311215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142221937516300816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c95b865e9b31b2459018503c37202b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 1125927562396599327, guid: 799fe9dafd0d8c548b521b5eedb7f02e, type: 3}
+  _initialPoolSize: 50
 --- !u!1 &2440754839363203772
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +223,7 @@ Transform:
   - {fileID: 3258319677353766517}
   - {fileID: 241917734794195669}
   - {fileID: 5029861385944167483}
+  - {fileID: 2628592461640358027}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8549906794444464716
@@ -199,7 +246,7 @@ MonoBehaviour:
   - {fileID: 8267644232790006897}
   - {fileID: 8267644232790006897}
   - {fileID: 8267644232790006897}
-  - {fileID: 314532210276164250}
+  - {fileID: 8590997075959311215}
   - {fileID: 314532210276164250}
   - {fileID: 314532210276164250}
   - {fileID: 8106223346006915468}
@@ -249,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c95b865e9b31b2459018503c37202b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 7203732887393005340, guid: 1eeb953c8bca42a468c1c2d4d4b53aa6, type: 3}
+  _prefab: {fileID: 6359661203500268506, guid: 1eeb953c8bca42a468c1c2d4d4b53aa6, type: 3}
   _initialPoolSize: 10
 --- !u!1 &4950169094801879009
 GameObject:
