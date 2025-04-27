@@ -449,10 +449,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1967422816}
     m_Modifications:
-    - target: {fileID: 1781461782905280889, guid: 3bf613b3fe01c3a47a5b777c8d86686a, type: 3}
-      propertyPath: _initialPoolSize
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4383721817896142187, guid: 3bf613b3fe01c3a47a5b777c8d86686a, type: 3}
       propertyPath: m_Name
       value: PoolManager
