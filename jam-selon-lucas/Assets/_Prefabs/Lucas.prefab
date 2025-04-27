@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pool: 13
   fireRate: 0
-  timeBetweenSalves: 3
-  projectilesPerSalve: 20
+  timeBetweenSalves: 5
+  projectilesPerSalve: 15
   _spawnsEnnemies: 0
   _randomSpawn: 1
   _minSpawnRange: 1.2
