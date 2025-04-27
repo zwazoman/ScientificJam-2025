@@ -108,7 +108,7 @@ MonoBehaviour:
   hp: 10
   destroyOnDeath: 1
   team: 2
-  _xpGains: 0
+  _xpGains: 10
   onDamageTaken:
     m_PersistentCalls:
       m_Calls: []
