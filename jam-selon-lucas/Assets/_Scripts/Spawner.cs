@@ -17,11 +17,21 @@ public class Spawner : MonoBehaviour
     [SerializeField,Tooltip("JAUNe")] float _minSpawnRange = 0;
     [SerializeField,Tooltip("ROUGE")] float _maxSpawnRange = 0;
 
-    private async void OnEnable()
+    private void Start()
+    {
+        OnPulledFromPool();
+    }
+
+    private async void OnPulledFromPool()
     {
         await Awaitable.NextFrameAsync();
         if(fireRate != 0 || timeBetweenSalves !=0)
             StartCoroutine(PeriodicShoot());
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine("PeriodicShoot");
     }
 
     IEnumerator PeriodicShoot()

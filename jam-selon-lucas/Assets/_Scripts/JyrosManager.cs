@@ -44,22 +44,36 @@ public class JyrosManager : MonoBehaviour
 
     public void AddEntity(int value = 1)
     {
-        EntityCpt += value;
-
-        if (EntityCpt >= jyrosSummonThreshold && jyros == null)
+        try
         {
-            SummonJyros();
+            EntityCpt += value;
+
+            if (EntityCpt >= jyrosSummonThreshold && jyros == null)
+            {
+                SummonJyros();
+            }
+        }
+        catch (Exception e) 
+        {
+            Debug.LogException(e);
         }
     }
 
     public void RemoveEntity(int value = 1)
     {
-        EntityCpt -= value;
-
-        if(EntityCpt <=  jyrosUnSummonThreshold && jyros != null)
+        try
         {
-            print("unsummon jyros");
-            OnJyrosUnSummon?.Invoke();
+            EntityCpt -= value;
+
+            if(EntityCpt <=  jyrosUnSummonThreshold && jyros != null)
+            {
+                print("unsummon jyros");
+                OnJyrosUnSummon?.Invoke();
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogException(e);
         }
     }
 
