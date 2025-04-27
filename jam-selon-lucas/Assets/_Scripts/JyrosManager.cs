@@ -39,7 +39,7 @@ public class JyrosManager : MonoBehaviour
 
     private void Update()
     {
-        print(EntityCpt);
+        //print(EntityCpt);
     }
 
     public void AddEntity(int value = 1)

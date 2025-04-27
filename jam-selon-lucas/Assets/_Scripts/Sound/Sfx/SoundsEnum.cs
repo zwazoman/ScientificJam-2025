@@ -1,1 +1,1 @@
-public enum Sounds{Jyros,}
+public enum Sounds{Punch,DroneShoot,Oyster,}

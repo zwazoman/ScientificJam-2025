@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using AYellowpaper.SerializedCollections;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -203,6 +204,23 @@ public class SFXManager : MonoBehaviour
         audioSource.gameObject.transform.position = position;
 
         return AudioSourceHandle(audioSource, volume, pitch, is2DSound, bypassesEffects);
+    }
+
+    public AudioSource PlaySFXClipAtPosition(string clipName)
+    {
+        if (!_soundsDict.Keys.Contains(clipName))
+        {
+            return null;
+        }
+
+        AudioSource audioSource = UseFromPool();
+        Clip choosenClip;
+
+        choosenClip = _soundsDict[clipName];
+
+        audioSource.clip = ChooseRandomClip(choosenClip);
+
+        return AudioSourceHandle(audioSource);
     }
 
     #endregion
