@@ -61,6 +61,16 @@ MonoBehaviour:
         MixerGroup: {fileID: 0}
         tempClipList: []
         tempClip: {fileID: 0}
+    - Key: LVLUP
+      Value:
+        ClipList:
+        - {fileID: 8300000, guid: fbbe0032841b0744ea0d85faeb822ffb, type: 3}
+        Volume: 0.3
+        Pitch: 1
+        RandomType: 0
+        MixerGroup: {fileID: 0}
+        tempClipList: []
+        tempClip: {fileID: 0}
     - Key: DroneShoot
       Value:
         ClipList:
