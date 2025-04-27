@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5792811163660403046
+--- !u!1 &1505640226860651080
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3659300945199659661}
-  - component: {fileID: 1580131617037700351}
-  - component: {fileID: 201253179828590709}
+  - component: {fileID: 2318559200105535554}
+  - component: {fileID: 6126687484554139188}
+  m_Layer: 0
+  m_Name: Waves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2318559200105535554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505640226860651080}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8181442707010750734}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6126687484554139188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505640226860651080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5273a6eb9fe55334c8c3b406f9baf9e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: 13
+  fireRate: 0
+  timeBetweenSalves: 3
+  projectilesPerSalve: 20
+  _spawnsEnnemies: 0
+  _randomSpawn: 1
+  _minSpawnRange: 1.2
+  _maxSpawnRange: 1.2
+--- !u!1 &3972249579444936284
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3534570891631308444}
+  - component: {fileID: 618212637438040622}
+  - component: {fileID: 1259878408810777153}
   m_Layer: 0
   m_Name: JyrosManager
   m_TagString: Untagged
@@ -18,44 +70,44 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3659300945199659661
+--- !u!4 &3534570891631308444
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5792811163660403046}
+  m_GameObject: {fileID: 3972249579444936284}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.04, y: 0.02, z: 0}
+  m_LocalPosition: {x: -6.54, y: -0.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8540346293504889938}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1580131617037700351
+--- !u!114 &618212637438040622
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5792811163660403046}
+  m_GameObject: {fileID: 3972249579444936284}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 774c3d080532a6547ab90ef2822f3f94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jyrosSummonThreshold: 5
-  jyrosUnSummonThreshold: 4
+  jyrosSummonThreshold: 60
+  jyrosUnSummonThreshold: 40
   EntityCpt: 0
   jyros: {fileID: 0}
---- !u!114 &201253179828590709
+--- !u!114 &1259878408810777153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5792811163660403046}
+  m_GameObject: {fileID: 3972249579444936284}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5273a6eb9fe55334c8c3b406f9baf9e4, type: 3}
@@ -67,8 +119,8 @@ MonoBehaviour:
   projectilesPerSalve: 1
   _spawnsEnnemies: 0
   _randomSpawn: 1
-  _minSpawnRange: 8.2
-  _maxSpawnRange: 25.8
+  _minSpawnRange: 11
+  _maxSpawnRange: 14
 --- !u!1 &8415746697093701201
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,6 +132,7 @@ GameObject:
   - component: {fileID: 5510868571191852453}
   - component: {fileID: 2648946611609054583}
   - component: {fileID: 3604267121596529659}
+  - component: {fileID: 8615058924200471629}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -197,6 +250,18 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &8615058924200471629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8415746697093701201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01224da3d3937847a5b8e73bc761c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9114388765541591512
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +278,8 @@ GameObject:
   - component: {fileID: -320016521738527368}
   - component: {fileID: 6767569186941367531}
   - component: {fileID: 6384748533619221406}
+  - component: {fileID: 7405336825153178148}
+  - component: {fileID: 2179556667284357649}
   m_Layer: 0
   m_Name: Lucas
   m_TagString: Untagged
@@ -236,7 +303,7 @@ Transform:
   - {fileID: 5510868571191852453}
   - {fileID: 8181442707010750734}
   - {fileID: 7731348537981044214}
-  - {fileID: 3659300945199659661}
+  - {fileID: 3534570891631308444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1389567182734701669
@@ -346,7 +413,7 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 1389567182734701669}
   spawnThingOnDeath: 1
   DeathObject: 8
 --- !u!114 &-320016521738527368
@@ -364,6 +431,7 @@ MonoBehaviour:
   playerXP: {fileID: 0}
   playerGuns:
   - {fileID: 7588842117536495181}
+  - {fileID: 6126687484554139188}
   enemySpawners:
   - {fileID: 7721730184944121252}
   - {fileID: 2982090275401398636}
@@ -415,6 +483,149 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9114388765541591512}
   m_Enabled: 1
+--- !u!50 &7405336825153178148
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9114388765541591512}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 145.69
+  m_LinearDamping: 26.21
+  m_AngularDamping: 2
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!96 &2179556667284357649
+TrailRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9114388765541591512}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Time: 0.2
+  m_PreviewTimeScale: 1
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -2.4317381
+        outSlope: -2.4317381
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.18528879
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_ColorSpace: -1
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    textureScale: {x: 1, y: 1}
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_MinVertexDistance: 0.1
+  m_MaskInteraction: 0
+  m_Autodestruct: 0
+  m_Emitting: 1
+  m_ApplyActiveColorSpace: 1
 --- !u!1001 &614043843189432111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -423,6 +634,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8540346293504889938}
     m_Modifications:
+    - target: {fileID: 7049679527443392866, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
+      propertyPath: _randomSpawn
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7460240744112274609, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
       propertyPath: m_Name
       value: Guns
@@ -469,7 +684,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8723427760095385121, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2318559200105535554}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5b34f0f264b0834aa863f1b8daeb29e, type: 3}
 --- !u!114 &7588842117536495181 stripped
@@ -506,11 +724,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 308177722434929627, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _maxSpawnRange
-      value: 12.69
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 308177722434929627, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _minSpawnRange
-      value: 8.73
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 308177722434929627, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: projectilesPerSalve
@@ -526,11 +744,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2565779319440196142, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _maxSpawnRange
-      value: 12.69
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2565779319440196142, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _minSpawnRange
-      value: 8.73
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565779319440196142, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: timeBetweenSalves
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565779319440196142, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
+      propertyPath: projectilesPerSalve
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _pool
@@ -546,11 +772,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _maxSpawnRange
-      value: 12.69
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _minSpawnRange
-      value: 8.73
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5047767715333230355, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _spawnsEnnemies
@@ -614,11 +840,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6451623486711585387, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _maxSpawnRange
-      value: 12.69
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6451623486711585387, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: _minSpawnRange
-      value: 8.73
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6451623486711585387, guid: 77c265ec7c15d944d8631960868ed58d, type: 3}
       propertyPath: timeBetweenSalves

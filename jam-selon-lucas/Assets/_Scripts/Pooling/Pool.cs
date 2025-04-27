@@ -23,6 +23,8 @@ public class Pool : MonoBehaviour
 
     private void Awake()
     {
+        //création du tableau d'instances
+        _instances = new List<PooledObject>();
         PopulatePool(_initialPoolSize);
     }
 
@@ -31,8 +33,7 @@ public class Pool : MonoBehaviour
     /// </summary>
     private void PopulatePool(uint poolSize)
     {
-        //création du tableau d'instances
-        _instances = new List<PooledObject>();
+        
 
         //regarde si il y'aura besoin d'ajouter le component PooledObject aux instances de la prefab,ou si il y est déjà.
         bool PrefabAlreadyHasPooledObjectComponent = _prefab.GetComponent<PooledObject>();
