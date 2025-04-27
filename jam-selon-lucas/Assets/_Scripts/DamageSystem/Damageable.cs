@@ -24,6 +24,7 @@ public class Damageable : MonoBehaviour
     [SerializeField] Pools DeathObject = Pools.explosionVFX;
 
     Vector3 baseScale;
+    bool _isDead;
 
     private void Awake()
     {
@@ -72,11 +73,17 @@ public class Damageable : MonoBehaviour
 
     public async void Die()
     {
+        if (_isDead) return;
+        _isDead = true;
+
         await Awaitable.WaitForSecondsAsync(invicibilityDuration*.5f);
         onDeath?.Invoke();
-        JyrosManager.Instance.RemoveEntity();
 
-        if (team == Team.Ennemy) PlayerMain.instance.playerXP.GainXP(_xpGains);
+        if (team == Team.Ennemy)
+        {
+            PlayerMain.instance.playerXP.GainXP(_xpGains);
+            JyrosManager.Instance.RemoveEntity();
+        }
 
         if (spawnThingOnDeath) PoolManager.Instance.ChoosePool(DeathObject).PullObjectFromPool(transform.position);
 

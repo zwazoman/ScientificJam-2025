@@ -46,7 +46,7 @@ public class Spawner : MonoBehaviour
         else
             choosenSpawnPos = transform.position;
 
-        Debug.Log(_pool);
+        //Debug.Log(_pool);
 
         if (_spawnsEnnemies)
         {
@@ -58,6 +58,12 @@ public class Spawner : MonoBehaviour
         {
             case Pools.DroneBullet:
                 SFXManager.Instance.PlaySFXClipAtPosition(Sounds.DroneShoot,transform.position);
+                break;
+            case Pools.Punch:
+                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.Punch,transform.position); 
+                break;
+            case Pools.huitre:
+                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.Oyster,transform.position);
                 break;
         }
 

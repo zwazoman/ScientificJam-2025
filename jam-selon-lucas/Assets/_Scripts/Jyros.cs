@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Jyros : MonoBehaviour
@@ -12,10 +13,14 @@ public class Jyros : MonoBehaviour
     private void Start()
     {
         JyrosManager.Instance.OnJyrosUnSummon += Die;
-        SFXManager.Instance.PlaySFXClip(Sounds.Jyros);
     }
 
     void Die()
+    {
+        transform.DOScale(0, 2).SetEase(Ease.InBack).onComplete += ReallyDie;
+    }
+
+    void ReallyDie()
     {
         JyrosManager.Instance.jyros = null;
         PoolManager.Instance.ChoosePool(Pools.Jyros).PutObjectBackInPool(_poolObject);
