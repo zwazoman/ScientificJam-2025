@@ -83,7 +83,7 @@ public class Spawner : MonoBehaviour
                 SFXManager.Instance.PlaySFXClipAtPosition(Sounds.MainProj,transform.position);
                 break;
             case Pools.TargetedMissile:
-                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.MainProj, transform.position);
+                SFXManager.Instance.PlaySFXClipAtPosition(Sounds.MainProj, transform.position,false,false,2,1.3f);
 
                 break;
         }
