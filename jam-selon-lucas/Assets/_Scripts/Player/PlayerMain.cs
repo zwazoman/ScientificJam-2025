@@ -35,8 +35,8 @@ public class PlayerMain : MonoBehaviour
     {
         playerXP.OnLvlUp += () =>
         {
-            UpgradeSpawners(playerGuns, ref _playerSpawnerCPT, _lvlUpgrade, 1.1f, 1.4f, 0.7f, 0.9f);
-            UpgradeSpawners(enemySpawners, ref _enemySpawnerCPT, _lvlEnemy, 1.1f, 1.4f, 0.8f, 0.9f);
+            UpgradeSpawners(playerGuns, ref _playerSpawnerCPT, _lvlUpgrade, 1.05f, 1.2f, 0.8f, 0.9f);
+            UpgradeSpawners(enemySpawners, ref _enemySpawnerCPT, _lvlEnemy, 1.2f, 1.4f, 0.7f, 0.9f);
         };
     }
 
@@ -44,7 +44,7 @@ public class PlayerMain : MonoBehaviour
     {
         foreach (Spawner spawner in spawners)
         {
-            if (spawner.gameObject.activeSelf)
+            if (spawner.enabled)
             {
                 float newProjectilesPerSalves = spawner.projectilesPerSalve * Random.Range(minProjPerSalveGrowth, maxProjPerSalveGrowth);
                 spawner.projectilesPerSalve = newProjectilesPerSalves;
