@@ -226,6 +226,7 @@ Transform:
   - {fileID: 2628592461640358027}
   - {fileID: 244802392378553176}
   - {fileID: 6479616962926113971}
+  - {fileID: 5904799358807159458}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8549906794444464716
@@ -256,6 +257,7 @@ MonoBehaviour:
   - {fileID: 6944518471769729783}
   - {fileID: 3220395097423287924}
   - {fileID: 3613303437654643140}
+  - {fileID: 3893479852147091363}
 --- !u!1 &4390578038743592041
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,6 +488,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 2413926646004503737, guid: 7b6049495aaba694189ead1f2873225a, type: 3}
   _initialPoolSize: 50
+--- !u!1 &6901274441663067395
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5904799358807159458}
+  - component: {fileID: 3893479852147091363}
+  m_Layer: 0
+  m_Name: Endo Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5904799358807159458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6901274441663067395}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8542989701716603461}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3893479852147091363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6901274441663067395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c95b865e9b31b2459018503c37202b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 4970709883981028612, guid: ace115e9b36a7bf499e936ae781091c7, type: 3}
+  _initialPoolSize: 150
 --- !u!1 &8013411387693748027
 GameObject:
   m_ObjectHideFlags: 0
