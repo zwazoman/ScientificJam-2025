@@ -21,7 +21,7 @@ public class Jyros : MonoBehaviour
     void Die()
     {
         _oldScale = transform.localScale;
-        transform.DOScale(0, 2).SetEase(Ease.InBack).onComplete += ReallyDie;
+        transform.DOScale(0, 1).SetEase(Ease.InBack).onComplete += ReallyDie;
     }
 
     void ReallyDie()

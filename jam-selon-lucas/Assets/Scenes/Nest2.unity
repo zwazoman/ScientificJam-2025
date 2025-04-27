@@ -449,6 +449,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1967422816}
     m_Modifications:
+    - target: {fileID: 1781461782905280889, guid: 3bf613b3fe01c3a47a5b777c8d86686a, type: 3}
+      propertyPath: _initialPoolSize
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4383721817896142187, guid: 3bf613b3fe01c3a47a5b777c8d86686a, type: 3}
       propertyPath: m_Name
       value: PoolManager
@@ -506,94 +510,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1967422816}
     m_Modifications:
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[1].Key
-      value: LVLUP
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[2].Key
-      value: DroneShoot
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[3].Key
-      value: Oyster
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[3].Value.Pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[1].Value.Volume
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[2].Value.Volume
-      value: 0.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[3].Value.Volume
-      value: 0.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[1].Value.RandomType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[2].Value.RandomType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[3].Value.RandomType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[1].Value.ClipList.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: _soundsDict._serializedList.Array.data[3].Value.ClipList.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: '_soundsDict._serializedList.Array.data[1].Value.ClipList.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: fbbe0032841b0744ea0d85faeb822ffb, type: 3}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: '_soundsDict._serializedList.Array.data[1].Value.ClipList.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: be6bb96027cad444a8f9895c4ac567fa, type: 3}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: '_soundsDict._serializedList.Array.data[1].Value.ClipList.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: fab08efbb1b05ce498c25065a67a21f1, type: 3}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: '_soundsDict._serializedList.Array.data[2].Value.ClipList.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: f7788e01b20117b478ea768b6e434a27, type: 3}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: '_soundsDict._serializedList.Array.data[2].Value.ClipList.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: ba52b98b39c53ee42ab656b68dd084c5, type: 3}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: '_soundsDict._serializedList.Array.data[2].Value.ClipList.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: ee5f9d480b8595a44bc80f7a574363f9, type: 3}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: '_soundsDict._serializedList.Array.data[3].Value.ClipList.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: e0aa3d36c2207c94ebc05d6bc6885957, type: 3}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: '_soundsDict._serializedList.Array.data[3].Value.ClipList.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 9e7b63482c3b42448946048c3fa30eb4, type: 3}
-    - target: {fileID: 105864741588476225, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
-      propertyPath: '_soundsDict._serializedList.Array.data[3].Value.ClipList.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: ee6f49de600887b43962f144c335af44, type: 3}
     - target: {fileID: 6805352384030970292, guid: d55fd6b013f94b14685b0b5cffb7e74e, type: 3}
       propertyPath: m_Name
       value: AudioManager
