@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496cddeb93400e44996fb50bc1cb1df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 15
   team: 1
   DieOnContact: 1
 --- !u!58 &-8432269754468372216
