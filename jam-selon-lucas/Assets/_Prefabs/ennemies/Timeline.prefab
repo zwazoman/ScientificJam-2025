@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6436312108463306522}
   - component: {fileID: 4631170377382638972}
   - component: {fileID: 2113257190596939872}
+  - component: {fileID: 7702016661222828473}
   m_Layer: 0
   m_Name: BETA
   m_TagString: Untagged
@@ -119,6 +120,21 @@ MonoBehaviour:
   target: {fileID: 8764264834432102954}
   lookBehaviour: 0
   RandomOffsetMagnitude: 0
+--- !u!114 &7702016661222828473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304382764628836578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496cddeb93400e44996fb50bc1cb1df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  team: 2
+  DieOnContact: 0
 --- !u!1 &1007098197200446831
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,6 +147,7 @@ GameObject:
   - component: {fileID: 5732325645690642830}
   - component: {fileID: 5079472643003586355}
   - component: {fileID: 4710166287721716284}
+  - component: {fileID: 1685647650072279568}
   m_Layer: 0
   m_Name: FINITION QA
   m_TagString: Untagged
@@ -238,6 +255,21 @@ MonoBehaviour:
   target: {fileID: 5059152540488595246}
   lookBehaviour: 0
   RandomOffsetMagnitude: 0
+--- !u!114 &1685647650072279568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007098197200446831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496cddeb93400e44996fb50bc1cb1df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  team: 2
+  DieOnContact: 0
 --- !u!1 &2249534333102578040
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +282,7 @@ GameObject:
   - component: {fileID: 6703330627248149873}
   - component: {fileID: 7049936072555791203}
   - component: {fileID: 1736443238774370115}
+  - component: {fileID: 706679499468378356}
   m_Layer: 0
   m_Name: PUBLISH
   m_TagString: Untagged
@@ -357,6 +390,21 @@ MonoBehaviour:
   target: {fileID: 4083736281661609123}
   lookBehaviour: 0
   RandomOffsetMagnitude: 0
+--- !u!114 &706679499468378356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2249534333102578040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496cddeb93400e44996fb50bc1cb1df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  team: 2
+  DieOnContact: 0
 --- !u!1 &2449664444751058450
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +417,7 @@ GameObject:
   - component: {fileID: 3341265410188670703}
   - component: {fileID: 5236090383437636684}
   - component: {fileID: 7952946717792450253}
+  - component: {fileID: 7270108292585438917}
   m_Layer: 0
   m_Name: RESTITUTION
   m_TagString: Untagged
@@ -460,7 +509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   magnitude: 2
-  frequency: 2
+  frequency: 10
 --- !u!114 &7952946717792450253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +526,21 @@ MonoBehaviour:
   target: {fileID: 0}
   lookBehaviour: 3
   RandomOffsetMagnitude: 0
+--- !u!114 &7270108292585438917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2449664444751058450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496cddeb93400e44996fb50bc1cb1df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  team: 2
+  DieOnContact: 0
 --- !u!1 &4167911196669734772
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,6 +553,7 @@ GameObject:
   - component: {fileID: 991026233888452376}
   - component: {fileID: 1995814415460354764}
   - component: {fileID: 9006408953033206481}
+  - component: {fileID: 4323492209103211763}
   m_Layer: 0
   m_Name: ALPHA
   m_TagString: Untagged
@@ -596,6 +661,21 @@ MonoBehaviour:
   target: {fileID: 1483246737495694061}
   lookBehaviour: 0
   RandomOffsetMagnitude: 0
+--- !u!114 &4323492209103211763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167911196669734772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496cddeb93400e44996fb50bc1cb1df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  team: 2
+  DieOnContact: 0
 --- !u!1 &6139297533953674638
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +688,7 @@ GameObject:
   - component: {fileID: 1476495933576953798}
   - component: {fileID: 8805825098414060586}
   - component: {fileID: 7583168383679956505}
+  - component: {fileID: 2732812404278009090}
   m_Layer: 0
   m_Name: PRE PROD
   m_TagString: Untagged
@@ -715,6 +796,21 @@ MonoBehaviour:
   target: {fileID: 8569503484110612873}
   lookBehaviour: 0
   RandomOffsetMagnitude: 0
+--- !u!114 &2732812404278009090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6139297533953674638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496cddeb93400e44996fb50bc1cb1df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  team: 2
+  DieOnContact: 0
 --- !u!1 &7730293801667018023
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,6 +823,7 @@ GameObject:
   - component: {fileID: 2943197713093454720}
   - component: {fileID: 6998751534471498812}
   - component: {fileID: 7017503735056804016}
+  - component: {fileID: 2444962595389815185}
   m_Layer: 0
   m_Name: PROTOTYPE
   m_TagString: Untagged
@@ -834,6 +931,21 @@ MonoBehaviour:
   target: {fileID: 5365838615065404444}
   lookBehaviour: 0
   RandomOffsetMagnitude: 0
+--- !u!114 &2444962595389815185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7730293801667018023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 496cddeb93400e44996fb50bc1cb1df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  team: 2
+  DieOnContact: 0
 --- !u!1 &8366501945429446504
 GameObject:
   m_ObjectHideFlags: 0

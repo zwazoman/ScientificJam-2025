@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Timeline : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class Timeline : MonoBehaviour
 
     private void Start()
     {
+        OnPulledFromPool();
+    }
+    public void OnPulledFromPool()
+    {
         startPose = transform.position;
         StartDirection = transform.right;
     }
@@ -18,5 +23,6 @@ public class Timeline : MonoBehaviour
     void Update()
     {
         transform.position = startPose + StartDirection * Time.time * speed + transform.up * Mathf.Sin(Time.time * frequency) * magnitude;
+        
     }
 }

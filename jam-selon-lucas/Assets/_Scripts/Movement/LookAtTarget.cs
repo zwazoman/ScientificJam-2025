@@ -34,7 +34,7 @@ public class LookAtTarget : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, a);
 
         //Debug.Log(transform.eulerAngles);
-        if (lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtMouseOnStart)
+        if (lookBehaviour == LookBehaviour.LookAtPlayerOnStart || lookBehaviour == LookBehaviour.LookAtTargetTransformAtStart || lookBehaviour == LookBehaviour.LookAtMouseOnStart)
         {
             this.enabled = false;
         }
